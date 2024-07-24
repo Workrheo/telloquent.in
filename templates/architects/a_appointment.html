@@ -1,0 +1,138 @@
+{% extends 'dbase.html' %}
+
+{% load static %}
+
+{% block body %}
+
+
+
+
+{% include 'includes/a_sidebar.html' %}
+
+
+
+{% include 'includes/navbar.html' %}
+
+
+
+{% include 'includes/alerts.html' %}
+
+
+<div class="page-content">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-title-box">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="page-title">Appointments Awaiting</h4>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Telloquent </a></li>
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Pending Appointments</li>
+                            </ol>
+                        </div><!--end col-->
+                        <div class="col-auto align-self-center">
+                            <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">
+                                <span class="day-name" id="Day_Name">Today:</span>&nbsp;
+                                <span class="" id="Select_date">Jan 11</span>
+                                <i data-feather="calendar" class="align-self-center icon-xs ms-1"></i>
+                            </a>
+                            
+                        </div><!--end col-->  
+                    </div><!--end row-->                                                              
+                </div><!--end page-title-box-->
+            </div><!--end col-->
+        </div><!--end row-->
+        <!-- end page title end breadcrumb -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Confirm your pending appointments</h4>
+                        <p class="text-muted mb-0">Schedule your appointments to showcase to the customers</p>
+                    </div><!--end card-header-->
+
+
+                   
+                    <div class="card-body">
+
+
+
+
+
+                    <br><br>
+
+
+                        
+
+               
+                        <div class="table-responsive">
+                            <table class="table  table-bordered table-sm" >
+                                <thead>
+                                   
+                                    <tr>
+                                        <th>Customer Email </th>
+                                        <th>Appointment Status</th>
+                                        <th>Appointment time</th>
+                                        <th>Action</th>
+
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+
+                                    {% for i in data %}
+                                    
+                                    <tr>
+																	
+
+                                    
+                                        <td>{{i.customer.email}}</td>
+                                    
+                                        
+
+                                        <td>{{i.c_status}}</td>
+
+
+                                        <td >{{i.a_date}} {{i.a_timing}}</td>
+
+                                    
+                                        
+
+                                        <td >
+                                            <div class="appointment-action">
+
+                                                <a href="{% url 'architect_update_status' i.id %}" class="btn btn-sm bg-success-light">
+                                                    <i class="fas fa-check"></i>{{i.status}}
+                                                </a>
+                                                <a href="{% url 'architect_cancel_appointment' i.id %}" class="btn btn-sm bg-danger-light" onclick="return confirm('Are you sure to Cancel Appointment?')">
+                                                    <i class="fas fa-times"></i> Cancel
+                                                </a>
+                                            </div>
+                                        
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                    
+                                </tbody>
+                            </table>
+                            <br>
+                           
+                                   
+                               
+                        </div>
+                          
+                    </div><!--end card-body-->
+                </div><!--end card-->
+            </div> <!-- end col -->
+        </div> <!-- end row -->
+
+
+    </div><!-- container -->
+
+
+
+
+{% endblock body %}

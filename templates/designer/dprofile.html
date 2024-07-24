@@ -1,0 +1,298 @@
+{% extends 'dbase.html' %}
+
+{% load static %}
+
+{% block body %}
+
+
+
+
+{% include 'includes/d_sidebar.html' %}
+
+
+
+{% include 'includes/navbar.html' %}
+
+
+
+{% include 'includes/alerts.html' %}
+
+
+
+
+
+    <!-- Page Content-->
+    <div class="page-content">
+        <div class="container-fluid">
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="page-title">Designer Firm Profile</h4>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Telloquent</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Profile</a></li>
+                                    <li class="breadcrumb-item active">Update</li>
+                                </ol>
+                            </div><!--end col-->
+                            <div class="col-auto align-self-center">
+                                <a href="#" class="btn btn-sm btn-outline-primary" id="Dash_Date">
+                                    <span class="day-name" id="Day_Name">Today:</span>&nbsp;
+                                    <span class="" id="Select_date">Jan 11</span>
+                                    <i data-feather="calendar" class="align-self-center icon-xs ms-1"></i>
+                                </a>
+                               
+                            </div><!--end col-->  
+                        </div><!--end row-->                                                              
+                    </div><!--end page-title-box-->
+                </div><!--end col-->
+            </div><!--end row-->
+            <!-- end page title end breadcrumb -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row align-items-center">
+                                <div class="col">                      
+                                    <h4 class="card-title">Update Your Profile</h4>                      
+                                    <p class="text-muted mb-0">Updated changes will be reflectd in the live portfolio.</p> 
+                                </div><!--end col-->                                        
+                            </div>  <!--end row-->                                  
+                        </div><!--end card-header-->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form action="{% url 'dprofile' %}" method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="restaurant-info">
+                                                    <div class="img-holder">
+                                                        <ul class="foodbakery-gallery-holder">
+                                                            <li class="gal-img">
+                                                                <div class="drag-list">
+                                                                    <div class="item-thumb">
+                                                                        {% if profile.profile_picture %}
+                                                                        <img class="thumbnail" src="{{profile.profile_picture.url}}" alt="Profile Picture" width="200">
+                                                                        {% else %}
+                                                                        <img class="thumbnail" src="{% static 'images/default-profile.png' %}" alt="Profile Picture">
+                                                                        {% endif %}
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="text-holder">
+                                                        <label>Update Profile Picture</label>
+                                                        <div class="upload-gallery">
+                                                            {{profile_form.profile_picture}}
+                                                        </div>
+                                                    </div>
+                                                    <label class="text-danger">{{ profile_form.profile_picture.errors }}</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="restaurant-info">
+                                                    <div class="img-holder">
+                                                        <ul class="foodbakery-gallery-holder">
+                                                            <li class="gal-img">
+                                                                <div class="drag-list">
+                                                                    <div class="item-thumb">
+                                                                        {% if profile.cover_photo %}
+                                                                        <img class="thumbnail" src="{{profile.cover_photo.url}}" alt="Cover Photo" width="200">
+                                                                        {% else %}
+                                                                        <img class="thumbnail" src="{% static 'images/default-cover.png' %}" alt="Cover Photo">
+                                                                        {% endif %}
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="text-holder">
+                                                        <label>Update Cover Photo</label>
+                                                        <div class="upload-gallery">
+                                                            {{profile_form.cover_photo}}
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <label class="text-danger">{{ profile_form.cover_photo.errors }}</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="restaurant-info">
+                                                    <div class="img-holder">
+                                                        <ul class="foodbakery-gallery-holder">
+                                                            <li class="gal-img">
+                                                                <div class="drag-list">
+                                                                    <div class="item-thumb">
+                                                                        <img class="thumbnail" src="{{designer.designer_license.url}}" alt="Designer License" width="200">
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="text-holder">
+                                                        <label>Update License</label>
+                                                        <div class="upload-gallery">
+                                                            {{designer_form.designer_license}}
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <label class="text-danger">{{ designer_form.designer_license.errors }}</label>
+                                                </div>
+                                            </div>
+                                        
+                                        <!--div class="form-group">
+                                            <label class="form-label" for="{{designer_form.designer_name.id_for_label}}">Designer Name :</label>
+                                            <input type="text" class="form-control" id="{{designer_form.designer_name.id_for_label}}" value= "{{designer_form.designer_name.value}}">
+                                        </div--><!--end form-group-->
+
+                                        <!--div class="form-group">
+                                            <label class="form-label" for="{{profile_form.address.id_for_label}}">Address</label>
+                                            <input type="address" class="form-control" id="{{profile_form.address.id_for_label}}" value="{{profile_form.address.value}}" placeholder="Update address here..">
+                                        </div--><!--end form-group-->
+
+                                        <div class="form-group mb-2">
+                                            <label class="form-label" for="{{designer_form.designer_name.id_for_label}}">Designer name </label> 
+                                            <div class="input-group">                                                                                         
+                                                <input type="text" class="form-control" name="{{designer_form.designer_name.name}}" id="{{ designer_form.designer_name.id_for_label }}" placeholder="Enter Designer/Firm name" value = "{{designer_form.designer_name.value}}" >
+                                            </div>                                    
+                                        </div>
+
+
+
+                                        <div class="form-group mb-2">
+                                            <label class="form-label" for="{{designer_form.designer_description.id_for_label}}">Designer Description </label> 
+                                            <div class="input-group">                                                                                         
+                                                <input type="text" class="form-control" name="{{designer_form.designer_description.name}}" id="{{ designer_form.designer_description.id_for_label }}" placeholder="Enter Designer/Firm name" value = "{{designer_form.designer_description.value}}" >
+                                            </div>                                    
+                                        </div>
+
+
+
+                                        <div class="form-group mb-2">
+                                            <label class="form-label" for="{{designer_form.offical_number.id_for_label}}">Offical Contact Number </label> 
+                                            <div class="input-group">                                                                                         
+                                                <input type="text" class="form-control" name="{{designer_form.offical_number.name}}" id="{{ designer_form.offical_number.id_for_label }}" placeholder="Enter Designer/Firm name" value = "{{designer_form.offical_number.value}}" >
+                                            </div>                                    
+                                        </div>
+
+
+
+                                        <div class="form-group mb-2">
+                                            <label class="form-label" for="{{designer_form.website.id_for_label}}">Official Website </label> 
+                                            <div class="input-group">                                                                                         
+                                                <input type="text" class="form-control" name="{{designer_form.website.name}}" id="{{ designer_form.website.id_for_label }}" placeholder="Enter Designer/Firm name" value = "{{designer_form.website.value}}" >
+                                            </div>                                    
+                                        </div>
+
+
+
+                                        <div class="form-group mb-2">
+                                            <label class="form-label" for="{{designer_form.experience.id_for_label}}">Year of experience  </label> 
+                                            <div class="input-group">                                                                                         
+                                                <input type="text" class="form-control" name="{{designer_form.experience.name}}" id="{{ designer_form.experience.id_for_label }}" placeholder="Enter Designer/Firm name" value = "{{designer_form.experience.value}}" >
+                                            </div>                                    
+                                        </div>
+
+
+                                        <div class="form-group mb-2">
+                                            <label class="form-label" for="{{profile_form.address.id_for_label}}">Address </label> 
+                                            <div class="input-group">                                                                                         
+                                                <input type="text" class="form-control" name="{{profile_form.address.name}}" id="{{ profile_form.address.id_for_label }}" placeholder="Enter Address" value = "{{profile_form.address.value}}" >
+                                            </div>             
+                                            <small class="text-muted float-right">powered by Google</small>
+                       
+                                        </div>
+
+
+                                    
+
+
+
+                                        <div class="form-group mb-2">
+                                            <label class="form-label" for="{{profile_form.city.id_for_label}}">City </label> 
+                                            <div class="input-group">                                                                                         
+                                                <input type="text" class="form-control" name="{{profile_form.city.name}}" id="{{ profile_form.city.id_for_label }}" placeholder="Enter City" value = "{{profile_form.city.value}}" >
+                                            </div>             
+                       
+                                        </div>
+
+
+                                        <div class="form-group mb-2">
+                                            <label class="form-label" for="{{profile_form.state.id_for_label}}">State </label> 
+                                            <div class="input-group">                                                                                         
+                                                <input type="text" class="form-control" name="{{profile_form.state.name}}" id="{{ profile_form.state.id_for_label }}" placeholder="Enter State" value = "{{profile_form.state.value}}" >
+                                            </div>             
+                       
+                                        </div>
+
+
+
+                                        <div class="form-group mb-2">
+                                            <label class="form-label" for="{{profile_form.state.id_for_label}}">Country </label> 
+                                            <div class="input-group">                                                                                         
+                                                <input type="text" class="form-control" name="{{profile_form.country.name}}" id="{{ profile_form.country.id_for_label }}" placeholder="Enter Country" value = "{{profile_form.country.value}}" >
+                                            </div>             
+                       
+                                        </div>
+
+
+
+                                        <div class="form-group mb-2" aria-readonly="true">
+                                            <label class="form-label" for="{{profile_form.latitude.id_for_label}}">Latitude </label> 
+                                            <div class="input-group" aria-readonly="true">                                                                                         
+                                                <input type="text" class="form-control" name="{{profile_form.latitude.name}}" id="{{ profile_form.latitude.id_for_label }}" placeholder="Enter latitude" value = "{{profile_form.latitude.value}}" >
+                                            </div>             
+                       
+                                        </div>
+
+
+
+                                        <div class="form-group mb-2" aria-readonly="true">
+                                            <label class="form-label" for="{{profile_form.state.id_for_label}}">Longitude </label> 
+                                            <div class="input-group" aria-readonly="true">                                                                                         
+                                                <input type="text" class="form-control" name="{{profile_form.longitude.name}}" id="{{ profile_form.longitude.id_for_label }}" placeholder="Enter longitude" value = "{{profile_form.longitude.value}}" >
+                                            </div>             
+                       
+                                        </div>
+
+
+                                        
+
+                                       
+                                        
+                                      
+                                        
+                                        <button type="submit" class="btn btn-info"><i class="fa fa-check" aria-hidden="true"></i> Update Profile</button>
+
+
+                                         {% for field in form %}
+                                            {% if field.errors %}
+                                                {% for error in field.errors %}
+                                                    <li style="color: red;">{{ error }}</li>
+                                                 {% endfor %}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </form>  <!--end form-->
+                                </div><!--end col-->
+                             
+                            </div><!--end row-->                                                                              
+                        </div><!--end card-body-->
+                    </div><!--end card-->
+                </div><!--end col-->
+            </div><!--end row-->
+
+        </div><!-- container -->
+
+
+    <!-- end page content -->
+</div>
+
+
+{% endblock body %}
+
+
+

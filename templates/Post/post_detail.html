@@ -1,0 +1,64 @@
+{% extends 'ibase1.html' %}
+
+{% load static %}
+
+
+
+{% block body %}
+      
+
+
+<div id="wrapper-content" class="wrapper-content pb-13">
+    <div class="container">
+        <div class="page-container">
+            <div class="page-content">
+                <div class="mb-10">
+                    <div class="single-blog-top pt-9">
+                        <h2 class="text-center mb-3 letter-spacing-50"> {{post_detail}}
+                            </h2>
+                        <ul class="list-inline d-flex align-items-center justify-content-center flex-wrap">
+                            <li class="list-inline-item mr-1">
+                                <span class="text-gray">{{post_detail.created}} by</span>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="link-hover-dark-primary">{{post_detail.author.first_name}} {{post_detail.author.last_name}}</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="mb-12">
+                        <img src="{{post_detail.image.url}}" alt="Single blog">
+                    </div>
+                    <div class="single-blog-content">
+                        <h4 class="mb-8">{{post_detail.short_content}}</h4>
+                        <div class="mb-11">
+                            <p class="mb-7 lh-19 font-size-md">
+                                {{post_detail.content}}
+                            </p>
+                            <p class="mb-7 lh-19 font-size-md">Coventry is a city with a thousand years of
+                                {{post_detail.main_content}}</p>
+                            <blockquote>
+                               
+                                <cite class="quote-author">
+                                    <svg class="icon icon-quote-open">
+                                        <use xlink:href="#icon-quote-open"></use>
+                                    </svg>
+                                    {{post_detail.quote}}
+                                </cite>
+                            </blockquote>
+                           
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+               
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

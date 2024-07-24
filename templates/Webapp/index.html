@@ -1,0 +1,697 @@
+{% extends 'ibase.html' %}
+
+{% load static %}
+
+
+
+
+
+
+{% block body %}
+
+
+
+
+
+<div class="content-wrap">
+
+        <!-- #section Banner start -->
+
+    <div class="banner">
+        <div class="container">
+            <div class="banner-content text-center">
+                <div class="heading">
+                    <h1 class="mb-0 text-white lh-1 font-weight-normal mb-6 letter-spacing-50"
+                        data-animate="fadeInLeft">
+                        <span class="d-block">Find the right Interior designers , Architects and Properties near you</span>
+                        <!--span class="d-block">whatever you need</span-->
+                    </h1>
+                    <!--div class="font-size-h5 text-white" data-animate="fadeInRight">
+                        Find the right Interior designers , Architects and Properties near you
+                    </div-->
+                </div>
+                <!--div class="form-search" data-animate="fadeInDown">
+                    <form>
+                        <div class="row align-items-end">
+                            <div class=" col-xl-6 mb-4 mb-xl-0 text-center text-md-left">
+                                <label for="key-word" class="text-white text-uppercase font-weight-bold">What
+                                    service do you need?</label>
+                                <div class="input-group dropdown bg-white rounded">
+                                    <input type="text" autocomplete="off" id="key-word" name="key-word"
+                                           class="form-control border-0 form-control-lg bg-transparent"
+                                           placeholder="eg: personal trainers, house cleaning"
+                                           data-toggle="dropdown"
+                                           aria-haspopup="true">
+                                    <a href="#" class="input-group-append text-decoration-none" data-toggle="dropdown">
+                                        <i class="fal fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="dropdown-menu form-search-ajax" aria-labelledby="key-word">
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                <svg class="icon icon-pizza">
+                                                    <use xlink:href="#icon-pizza"></use>
+                                                </svg>
+                                                <span class="font-size-md">Foods & Restaurants</span>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                <svg class="icon icon-bed">
+                                                    <use xlink:href="#icon-bed"></use>
+                                                </svg>
+                                                <span class="font-size-md">Hotels & Resorts</span>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                <svg class="icon icon-pharmaceutical">
+                                                    <use xlink:href="#icon-pharmaceutical"></use>
+                                                </svg>
+                                                <span class="font-size-md">Healths & Medicals</span>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                <svg class="icon icon-cog">
+                                                    <use xlink:href="#icon-cog"></use>
+                                                </svg>
+                                                <span class="font-size-md">Services</span>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                <svg class="icon icon-car">
+                                                    <use xlink:href="#icon-car"></use>
+                                                </svg>
+                                                <span class="font-size-md">Automotive</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class=" col-xl-4 mb-4 mb-xl-0 text-center text-md-left">
+                                <label for="region" class="text-white text-uppercase font-weight-bold">where do
+                                    you need it?</label>
+                                <div class="input-group dropdown rounded show">
+                                    <input type="text" autocomplete="off" id="region" name="region"
+                                           class="form-control border-0 form-control-lg bg-transparent"
+                                           placeholder="Town, city or postcode" data-toggle="dropdown"
+                                           aria-haspopup="true">
+                                    <a href="#" class="input-group-append text-decoration-none" data-toggle="dropdown">
+                                        <i class="fal fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="dropdown-menu form-search-ajax" aria-labelledby="region">
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                Austin
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                Boston
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                Chicago
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                Denver
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                Los Angeles
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                New York
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                San Francisco
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                Seattle
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item item">
+                                            <a href="#" class="link-hover-dark-white">
+                                                Washington
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class=" col-xl-2">
+                                <button type="submit"
+                                        class="btn btn-primary font-size-h5 btn-block font-weight-normal btn-icon-left btn-lg lh-16">
+                                    <i
+                                            class="fal fa-search"></i>Search
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="advance-search text-left mt-7">
+                            <a class="text-white text-uppercase font-weight-bold text-decoration-none"
+                               data-toggle="collapse" href="#advanceSearch" role="button"
+                               aria-expanded="false">advance search<i class="fal fa-chevron-down"></i></a>
+                        </div>
+                        <div id="advanceSearch" class="collapse form-advance-search mt-4">
+                            <div class="row">
+                                <div class="col-md-6 mb-4 mb-md-0 text-center text-md-left">
+                                    <div class="form-group">
+                                        <div class="form-label text-white font-weight-bold text-uppercase mb-2">
+                                            Filter by tags
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="custom-control custom-checkbox lh-19">
+                                                    <input class="custom-control-input" type="checkbox"
+                                                           id="bike-parking">
+                                                    <label class="custom-control-label text-white"
+                                                           for="bike-parking">
+                                                        Bike Parking
+                                                    </label>
+
+                                                </div>
+                                                <div class="custom-control custom-checkbox lh-19">
+                                                    <input class="custom-control-input" type="checkbox"
+                                                           id="contact">
+                                                    <label class="custom-control-label text-white"
+                                                           for="contact">
+                                                        Contact Form
+                                                    </label>
+
+                                                </div>
+                                                <div class="custom-control custom-checkbox lh-19">
+                                                    <input class="custom-control-input" type="checkbox"
+                                                           id="coupons">
+                                                    <label class="custom-control-label text-white"
+                                                           for="coupons">
+                                                        Coupons
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="custom-control custom-checkbox lh-19">
+                                                    <input class="custom-control-input" type="checkbox"
+                                                           id="free-entrance">
+                                                    <label class="custom-control-label text-white"
+                                                           for="free-entrance">
+                                                        Free Entrance
+                                                    </label>
+
+                                                </div>
+                                                <div class="custom-control custom-checkbox lh-19">
+                                                    <input class="custom-control-input" type="checkbox"
+                                                           id="italian">
+                                                    <label class="custom-control-label text-white"
+                                                           for="italian">
+                                                        Italian
+                                                    </label>
+
+                                                </div>
+                                                <div class="custom-control custom-checkbox lh-19">
+                                                    <input class="custom-control-input" type="checkbox"
+                                                           id="parking">
+                                                    <label class="custom-control-label text-white"
+                                                           for="parking">
+                                                        Parking Street
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="custom-control custom-checkbox lh-19">
+                                                    <input class="custom-control-input" type="checkbox"
+                                                           id="pets">
+                                                    <label class="custom-control-label text-white" for="pets">
+                                                        Pets Friendly
+                                                    </label>
+
+                                                </div>
+                                                <div class="custom-control custom-checkbox lh-19">
+                                                    <input class="custom-control-input" type="checkbox"
+                                                           id="smoking">
+                                                    <label class="custom-control-label text-white"
+                                                           for="smoking">
+                                                        Smoking Allowed
+                                                    </label>
+
+                                                </div>
+                                                <div class="custom-control custom-checkbox lh-19">
+                                                    <input class="custom-control-input" type="checkbox"
+                                                           id="wireless">
+                                                    <label class="custom-control-label text-white"
+                                                           for="wireless">
+                                                        Wireless Internet
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" col-md-4 mb-4 mb-md-0 text-center text-md-left">
+                                    <div class="price-range">
+                                        <label
+                                               class="form-label text-white font-weight-bold text-uppercase">
+                                            Price Range
+                                        </label>
+                                        <div class="price-range-wrapper d-flex flex-column justify-content-center">
+                                            <div id="price" data-slider="true"
+                                                 data-slider-options='{"min":0,"max":4000,"values":[0,2000]}'></div>
+                                            <div class="description mt-3 text-white">
+                                                From <input type="text" readonly class="amount border-0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div-->
+
+            </div>
+        </div>
+    </div>
+
+     <!-- /#section-Banner end -->
+
+
+    <!-- #section Client start -->
+    <section class="bg-gray-02 border-bottom py-8">
+        <div class="container">
+            <div class="position-relative client-logo inline">
+                <h4 class="font-weight-light mb-0 d-inline position-absolute">
+                    Trusted by
+                </h4>
+                <div class="slick-slider"
+                     data-slick-options='{"slidesToShow": 5,"autoplay":true,"dots":false,"arrows":false,"responsive":[{"breakpoint": 992,"settings": {"slidesToShow": 4}},{"breakpoint": 770,"settings": {"slidesToShow": 3}},{"breakpoint": 576,"settings": {"slidesToShow": 2}},{"breakpoint": 400,"settings": {"slidesToShow": 1}}]}'>
+                    {% for image in client_list %}
+                     <div class="box">
+                        <a href="#" class="item">
+                            <img src="{{ image.client_photo.url }}" alt="Client logo">
+                        </a>
+
+                    </div>
+                    {% endfor %}
+                   
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /#section-Client end -->
+
+
+
+    <!-- #section HOW IT WORKS start -->
+    <section id="section-02" class="text-center bg-gray-02 how-thedir-work">
+        <div class="container">
+            <div class="mb-9">
+                <h2 class="mb-0 font-weight-normal letter-spacing-50">
+                    How Telloquent  Works
+                </h2>
+            </div>
+            <div class="card-deck">
+                <div class="card text-center image-box-center border-0 rounded-0 px-6 py-8 box-shadow-hover"
+                     data-animate="fadeInDown">
+                    <div class="image mb-6 p-5">
+                        <img src="{% static 'webapp/images/listing/work-icon-1.png' %}" alt="Image box">
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="card-title mb-5 text-dark">
+                            Tell us what you need
+                        </div>
+                        <p class="card-text text-gray">
+                            Whether you’re looking for Interior designer , Architect or a
+                            Property in India take a moment to tell us and share a few details - then your
+                            work is done!
+                        </p>
+                    </div>
+                </div>
+                <div class="card text-center image-box-center border-0 rounded-0 px-6 py-8 box-shadow-hover"
+                     data-animate="fadeInDown">
+                    <div class="image mb-6 p-5">
+                        <img src="{% static 'webapp/images/listing/work-icon-2.png' %}" alt="Image box">
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="card-title mb-5 text-dark">
+                            Get Estimates & choose a pro
+                        </div>
+                        <p class="card-text text-gray">
+                            We do all the running around so that you don't have to! Contacting verified
+                            professionals is very time consuming, so we do it for you saving you hours
+                            of time.
+                        </p>
+                    </div>
+                </div>
+                <div class="card text-center image-box-center border-0 rounded-0 px-6 py-8 box-shadow-hover"
+                     data-animate="fadeInDown">
+                    <div class="image mb-6 p-5">
+                        <img src="{% static 'webapp/images/listing/work-icon-3.png' %}" alt="Image box">
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="card-title mb-5 text-dark">
+                            Hire & expect great service
+                        </div>
+                        <p class="card-text text-gray">
+                            We'll tell you when Pros reply. View their messages,
+                            profile on Telloquent to see what they can offer and help make your
+                            choice.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /#section-HOW IT WORKS end -->
+
+
+
+    <!-- #section Categories start -->
+    <section id="section-03" class="pt-12 pb-13">
+        <div class="container">
+            <div class="text-center mb-9">
+                <h2 class="mb-0 font-weight-normal letter-spacing-50">
+                    Top Popular Categories On Telloquent 
+                </h2>
+            </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-8 mb-6">
+                    <div class="image-box card rounded-0 border-0 hover-scale" data-animate="zoomIn">
+                        <a class="image position-relative card-img">
+                            <img src="{% static 'webapp/images/property.jpg' %}" alt="Image box">
+                        </a>
+                        <div class="text-white content-box px-4 pb-3 card-img-overlay">
+                            <p class="mb-1 text-capitalize">
+                                {{builder_count}} Pros</p>
+                            <a href="{% url 'builder_list' %}"
+                               class="font-size-h4 font-weight-normal text-white">
+                                Properties 
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4 mb-6">
+                    <div class="image-box card mb-6 rounded-0 border-0 hover-scale" data-animate="zoomIn">
+                        <a href="explore-half-map-grid.html" class="image position-relative card-img">
+                            <img src="{% static 'webapp/images/interior.jpg' %}" alt="Image box" >
+                        </a>
+                        <div class="text-white content-box px-4 pb-3 card-img-overlay">
+                            <p class="mb-1 text-capitalize">
+                                {{designer_count}} Pros
+                            </p>
+                            <a href="{% url 'designer_list' %}"
+                               class="font-weight-normal  text-white font-size-lg">
+                                Interior Designers
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="image-box card rounded-0 border-0 hover-scale" data-animate="zoomIn">
+                        <a class="image position-relative card-img">
+                            <img src="{% static 'webapp/images/architect.jpg' %}" alt="Image box">
+                        </a>
+                        <div class="text-white content-box px-4 pb-3 card-img-overlay">
+                            <p class="mb-1 text-capitalize">
+                               {{architect_count}} Pros </p>
+                            <a href="{% url 'architect_list' %}"
+                               class="font-weight-normal  text-white font-size-lg">
+                                Architects 
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+               
+               
+            </div>
+        </div>
+    </section>
+    <!-- /#section-Categories end -->
+
+
+    <!-- #section All Listings start -->
+    <section id="section-04" class="pt-13 pb-14 bg-gray-02 providers">
+        <div class="container">
+            <div class="mb-9 text-center main-header">
+                <h2 class="mb-0 font-weight-normal letter-spacing-50">The Right Professionals For Your Memorable
+                    Moments</h2>
+            </div>
+
+            <div class="listing-image-card">
+                <div class="mb-7">
+                    <h3 class="font-weight-normal mb-0 letter-spacing-50">Interior Designers</h3>
+                </div>
+                <div class="slick-slider arrow-top"
+                     data-slick-options='{"slidesToShow": 4, "autoplay":false,"dots":false,"responsive":[{"breakpoint": 992,"settings": {"slidesToShow": 3}},{"breakpoint": 768,"settings": {"slidesToShow": 2}},{"breakpoint": 400,"settings": {"slidesToShow": 1,"arrows":false}}]}'>
+                    {% for designer in designers %}
+                    <div class="box">
+                        <div class="card border-0 image-box-style-card box-shadow-hover">
+                            <a href="{% url 'designer_detail' designer.designer_slug %}">
+                                <img src="{{ designer.user_profile.cover_photo.url }}" alt="Furniture assembly">
+                            </a>
+                            <div class="card-body lh-1">
+                                <a href="{% url 'designer_detail' designer.designer_slug %}"
+                                   class="card-text text-dark font-size-md lh-11">
+                                    {{designer}}
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                   
+                </div>
+
+
+                <div class="mb-7">
+                    <h3 class="font-weight-normal mb-0 letter-spacing-50">Architects</h3>
+                </div>
+
+
+                <div class="slick-slider arrow-top"
+                     data-slick-options='{"slidesToShow": 4, "autoplay":false,"dots":false,"responsive":[{"breakpoint": 992,"settings": {"slidesToShow": 3}},{"breakpoint": 768,"settings": {"slidesToShow": 2}},{"breakpoint": 400,"settings": {"slidesToShow": 1,"arrows":false}}]}'>
+                    {% for architect in architects %}
+                    <div class="box">
+                        <div class="card border-0 image-box-style-card box-shadow-hover">
+                            <a href="{% url 'architect_detail' architect.architect_slug %}">
+                                <img src="{{ architect.user_profile.cover_photo.url }}" alt="Furniture assembly">
+                            </a>
+                            <div class="card-body lh-1">
+                                <a href="{% url 'architect_detail' architect.architect_slug %}"
+                                   class="card-text text-dark font-size-md lh-11">
+                                    {{architect}}
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                   
+                </div>
+
+
+                <br>
+                <br>
+
+
+
+                <div class="mb-7">
+                    <h3 class="font-weight-normal mb-0 letter-spacing-50">Properties</h3>
+                </div>
+
+
+                <div class="slick-slider arrow-top"
+                data-slick-options='{"slidesToShow": 4, "autoplay":false,"dots":false,"responsive":[{"breakpoint": 992,"settings": {"slidesToShow": 3}},{"breakpoint": 768,"settings": {"slidesToShow": 2}},{"breakpoint": 400,"settings": {"slidesToShow": 1,"arrows":false}}]}'>
+               {% for builders in builder %}
+               <div class="box">
+                   <div class="card border-0 image-box-style-card box-shadow-hover">
+                       <a href="{% url 'builder_detail' builders.builder_slug %}">
+                           <img src="{{ builders.user_profile.cover_photo.url }}" alt="Furniture assembly">
+                       </a>
+                       <div class="card-body lh-1">
+                           <a href="{% url 'builder_detail' builders.builder_slug %}"
+                              class="card-text text-dark font-size-md lh-11">
+                               {{builders}}
+                           </a>
+                       </div>
+
+                   </div>
+               </div>
+               {% endfor %}
+              
+           </div>
+            </div>
+            <!--div class="listing-image-card">
+                <div class="mb-7">
+                    <h3 class="font-weight-normal mb-0 letter-spacing-50">Architects</h3>
+                </div>
+                <div class="slick-slider arrow-top"
+                     data-slick-options='{"slidesToShow": 4, "autoplay":false,"dots":false,"responsive":[{"breakpoint": 992,"settings": {"slidesToShow": 3}},{"breakpoint": 768,"settings": {"slidesToShow": 2}},{"breakpoint": 400,"settings": {"slidesToShow": 1,"arrows":false}}]}'>
+                    <div class="box">
+                        <div class="card border-0 image-box-style-card box-shadow-hover">
+                            <a href="listing-details-image.html">
+                                <img src="{% static 'webapp/images/listing/wedding-1.jpg' %}" alt="Wedding & Event Makeup">
+                            </a>
+                            <div class="card-body lh-1">
+                                <a href="explore-half-map-list.html "
+                                   class="card-text text-dark font-size-md lh-11">
+                                    Wedding & Event Makeup
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div-->
+            <!--div class="listing-image-card">
+                <div class="mb-7">
+                    <h3 class="font-weight-normal mb-0 letter-spacing-50">Properties</h3>
+                </div>
+                <div class="slick-slider arrow-top"
+                     data-slick-options='{"slidesToShow": 4, "autoplay":true,"dots":false,"responsive":[{"breakpoint": 992,"settings": {"slidesToShow": 3}},{"breakpoint": 768,"settings": {"slidesToShow": 2}},{"breakpoint": 400,"settings": {"slidesToShow": 1,"arrows":false}}]}'>
+                    <div class="box">
+                        <div class="card image-box-style-card border-0 box-shadow-hover">
+                            <a href="listing-details-image.html">
+                                <img src="{% static 'webapp/images/listing/urgent-repair-1.jpg' %} " alt="Afforable Plumbing Services">
+                            </a>
+                            <div class="card-body lh-1">
+                                <a href="explore-half-map-list.html "
+                                   class="card-text text-dark font-size-md lh-11">
+                                    Afforable Plumbing Services
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+            </div-->
+            
+        </div>
+    </section>
+    <!-- /#section-All Listings end -->
+
+
+
+    <!-- #section Testimony start -->
+    <section class="py-12" id="section-05">
+        <div class="container">
+            <div class="heading">
+                <h2 class="text-center mb-0 font-weight-normal letter-spacing-50">
+                    Customers Say About Telloquent ?
+                </h2>
+                <div class="pb-11">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="slick-slider arrow-center equal-height testimonials-slider"
+                         data-slick-options='{"slidesToShow": 3, "autoplay":false,"dots":false,"responsive":[{"breakpoint": 1200,"settings": {"slidesToShow": 2}},{"breakpoint": 768,"settings": {"slidesToShow": 1,"arrows":false}}]}'>
+                        
+                        {% for client in testimonials %}
+                         <div class="box" data-animate="fadeInDown">
+                            <div class="card card testimonial border-0 border-0">
+                                <div class="card-title text-uppercase font-weight-medium text-gray mb-3">{{client.customer_name}}
+                                    hired
+                                    an {{client.get_client_category_display}}
+                                </div>
+                                <div class="card-body h5 font-weight-normal px-0 mb-0 lh-15 letter-spacing-35">
+                                    <span class="font-size-sm pb-3">
+                                        <svg class="icon icon-quotes-left">
+                                        <use xlink:href="#icon-quotes-left"></use>
+                                    </svg>
+                                    </span>
+                                    {{client.client_testimony}}<br> Would highly recommend Telloquent  to anyone,
+                                    excellent.
+                                </div>
+                                <div class="card-footer bg-transparent px-0 pt-6 pb-0">
+                                    <div class="media align-items-center">
+                                        <a href="#" class="image mr-3">
+                                            <img class="rounded-circle"
+                                                 src="{{client.client_photo.url}}"
+                                                 alt="Testimonial 1">
+                                        </a>
+                                        <div class="media-body lh-14">
+                                            <a href="#" class="font-size-lg text-link lh-11">{{client.client_name}}</a>
+                                            <div class="author-rate align-items-end mt-1">
+                                            <span class="rate-item checked">
+                                                <svg class="icon icon-ionicons_svg_md-star"><use
+                                                        xlink:href="#icon-ionicons_svg_md-star"></use></svg>
+                                            </span>
+                                                <span class="rate-item checked">
+                                                <svg class="icon icon-ionicons_svg_md-star"><use
+                                                        xlink:href="#icon-ionicons_svg_md-star"></use></svg>
+                                            </span>
+                                                <span class="rate-item checked">
+                                                <svg class="icon icon-ionicons_svg_md-star"><use
+                                                        xlink:href="#icon-ionicons_svg_md-star"></use></svg>
+                                            </span>
+                                                <span class="rate-item checked">
+                                                <svg class="icon icon-ionicons_svg_md-star"><use
+                                                        xlink:href="#icon-ionicons_svg_md-star"></use></svg>
+                                            </span>
+                                                <span class="rate-item checked">
+                                                <svg class="icon icon-ionicons_svg_md-star"><use
+                                                        xlink:href="#icon-ionicons_svg_md-star"></use></svg>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+    <!-- /#section-Testimony end -->
+
+
+    <!-- #section Pro register start -->
+    <section id="section-06" class="mt-5 bg-primary py-7">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="text-white col-lg-9">
+                    <h2 class="mb-1 text-white font-weight-normal letter-spacing-50">
+                        Are you a service professional?
+                    </h2>
+                    <p class="mb-0 font-size-md">
+                        Learn how Telloquent  can help you double your business
+                    </p>
+                </div>
+
+                <div class="col-lg-3 mt-4 mt-lg-0 text-left text-lg-right">
+                    <a href="{% url 'join_as_pro' %}"
+                       class="btn btn-outline-white btn-lg btn-icon-right font-size-h5 px-6 py-3 lh-1 font-weight-normal rounded-sm">
+                        Learn More
+                        <i class="fal fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /#section-Pro register end -->
+
+</div>
+
+
+
+{% endblock body %}

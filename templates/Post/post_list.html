@@ -1,0 +1,77 @@
+{% extends 'ibase1.html' %}
+
+{% load static %}
+
+
+
+{% block body %}
+      
+
+<div id="page-title" class="page-title page-title-style-no-background pb-0">
+    <div class="container">
+        <div class="h-100 d-flex align-items-center">
+            <div class="w-100">
+                <h1 class="mb-0 text-center" data-animate="fadeInDown">
+                    <span>Telloquent's </span>
+                    <span class="font-weight-light">Tips & Articles</span>
+                </h1>
+                <ul class="breadcrumb breadcrumb-style-01 justify-content-center" data-animate="fadeInUp">
+                    <li class="breadcrumb-item"><a href="/" class="link-hover-dark-primary">Home</a></li>
+                    <li class="breadcrumb-item"><span>Blog</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #page-title end -->
+
+<!-- #wrapper-content start -->
+<div id="wrapper-content" class="wrapper-content pb-13">
+    <div class="container">
+        <div class="page-container">
+            
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all">
+                    <div class="post-style-5">
+
+                        {% for post in post_list%}
+                        <div class="mb-9">
+                            <div class="post row no-gutters">
+                                <a href="{% url 'blog:post_detail' post.id %}" class="feature-image col-lg-8">
+                                    <img src="{{post.image.url}}" alt="Post 1">
+                                </a>
+                                <div class="card rounded-0 border-0 col-lg-4 bg-transparent">
+                                    <div class="card-body bg-transparent p-0">
+                                        <div class="mb-2"><a href="#"
+                                                             class="link-hover-dark-primary">{{post.category}}</a></div>
+                                        <h4 class="card-title text-capitalize mb-6 letter-spacing-25 lh-12"><a
+                                                href="{% url 'blog:post_detail' post.id %}"
+                                                class="link-hover-dark-primary">{{post}}</a>
+                                        </h4>
+                                        <div class="card-text">
+                                            {{post.short_content}}
+                                        </div>
+                                    </div>
+                                    <ul class="card-footer border-0 bg-transparent p-0 list-inline">
+                                        <li class="list-inline-item mr-0">
+                                            <span class="text-gray">{{post.created}} by</span>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="#" class="link-hover-dark-primary">{{post.author.first_name}} {{post.author.last_name}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                       
+                    </div>
+                </div>
+               
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

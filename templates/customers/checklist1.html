@@ -1,0 +1,486 @@
+{% extends 'ibase1.html' %}
+
+{% load static %}
+
+{% block body %}
+
+
+
+
+
+{% include 'includes/alerts.html' %}
+
+
+<br>
+<br>
+
+
+<!-- #page-title end -->
+<!-- #wrapper-content start -->
+<div id="wrapper-content" class="wrapper-content pt-10 pb-13">
+    <div class="container">
+
+        <div id="page-title" class="page-title pt-11 text-center">
+				<div class="h-100 ">
+					<div class="heading">
+						<h1 class="mb-0" data-animate="fadeInDown">
+							Fill Checklist to share it with the Designer
+						</h1>
+						<ul class="breadcrumb justify-content-center"
+						    data-animate="fadeInUp">
+							<li class="breadcrumb-item"><a href="/">Home</a></li>
+							<li class="breadcrumb-item"><span>Appointment confirmation</span></li>
+						</ul>
+					</div>
+				</div>
+		</div>
+       
+        <!-- #pricing-table START -->
+        <div id="pricing-table" class="section-pricing-table pt-9">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+            
+                            
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" id="{{request.user}}" aria-describedby="emailHelp" placeholder="{{request.user.first_name}} {{request.user.last_name}} " readonly>
+
+                
+                
+
+                <br><br>
+
+                    <label for="project_category">Project Category:</label>
+                    <select name="project_category">
+                        <option value="1">New home interiors</option>
+                        <option value="2">Renovation interiors</option>
+                        <!-- Add more project category options as needed -->
+                    </select>
+
+                <br><br>
+
+
+
+                        
+                    <label for="project_type">Project Type:</label>
+                    <select name="project_type">
+                        <option value="1">1BHK Apartment</option>
+                        <option value="2">2BHK Apartment</option>
+                        <option value="3">3BHK Apartment</option>
+                        <option value="4">4BHK Apartment</option>
+                        <option value="5">5BHK Apartment</option>
+                        <option value="6">Villa</option>
+                        <option value="7">Individual Apartment</option>
+                        <!-- Add more project type options as needed -->
+                    </select>
+                <br><br>
+
+                 </div>
+                
+                 <div class="form-group">
+
+                <!-- Kitchen Checklist Items -->
+                    <h2>Kitchen Checklist</h2>
+                    <label for="kitchen_finish">Kitchen Finishes:</label>
+                    <select name="kitchen_finish">
+                        <option value="1">Laminate Glossy</option>
+                        <option value="2">Laminate Matt</option>
+                        <option value="3">Acrylic</option>
+
+                        <option value="4">PU/DUCO</option>
+
+                        <option value="5">Laminate_Glossy and Laminate_Matt</option>
+
+                        <option value="6">Laminate_Glossy and Acrylic</option>
+                        <option value="7">Acrylic and PU/DUCO</option>
+                        <option value="8">Not Applicable</option>
+
+
+
+                        <!-- Add more kitchen finish options as needed -->
+                    </select>
+
+                    <br><br>
+
+                    
+                    <label for="kitchen_countertop">Kitchen Countertop:</label>
+                    <select name="kitchen_countertop">
+                        <option value="1">Granite</option>
+                        <option value="2">Quartz</option>
+                        <option value="3">Not Applicable</option>
+
+                        <!-- Add more kitchen countertop options as needed -->
+                    </select>
+                    
+                    <br><br>
+
+                    <label for="kitchen_dado">Kitchen Dado:</label>
+                    <select name="kitchen_dado">
+                        <option value="1">Tiles</option>
+                        <option value="2">Quartz</option>
+                        <option value="3">Not Applicable</option>
+
+
+                        <!-- Add more kitchen dado options as needed -->
+                    </select>
+
+                    <br><br>
+
+                    
+                    <label for="kitchen_loft">Kitchen Loft:</label>
+                    <select name="kitchen_loft">
+                        <option value="1">REQUIRED</option>
+                        <option value="2">NOT REQUIRED</option>
+                    </select>
+
+                    <br><br>
+
+
+
+
+                    
+                    
+                    <!-- Add more Kitchen checklist items as needed -->
+                    
+
+
+                    <label for="Utility">Utility:</label>
+
+
+                    <select name="utility">
+
+                
+                        <option value="1">Wall unit</option>
+                        <option value="2">Base unitBase unit</option>
+                        <option value="3">Both Base and Wall unit</option>
+                        <option value="4">Not Applicable</option>
+
+                    </select>
+
+                </div>
+
+
+            <br><br>
+            <div class="form-group">
+                <!-- Master Bedroom Checklist Items -->
+                <h2>Master Bedroom Checklist</h2>
+                <label for="MBR_Wardrobe">Master Bedroom Wardrobe:</label>
+                <select name="MBR_Wardrobe">
+                    <option value="1">Sliding Wardrobe</option>
+                    <option value="2">Openable Wardrobe</option>
+                    <option value="3">Sliding Wardrobe with Loft</option>
+                    <option value="4">Openable Wardrobe with Loft</option>
+                    <option value="5">Not Applicable</option>
+
+                    <!-- Add more MBR wardrobe options as needed -->
+                </select>
+
+                <br><br>
+                
+                <label for="MBR_COT">Master Bedroom Cot:</label>
+                <select name="MBR_COT">
+                    <option value="1">King Size</option>
+                    <option value="2">Queen Size</option>
+                    <option value="3">Not Applicable</option>
+                </select>
+                
+                <br><br>
+
+                <label for="MBR_Reqs">Master Bedroom Requirements:</label>
+                    <select name="MBR_Reqs">
+                        <option value="1">Chest Of Drawer</option>
+                        <option value="2">Dresser</option>
+                        <option value="3">Bay Window</option>
+                        <option value="4">Dresser, Chest Of Drawer</option>
+                        <option value="5">Bay window, Chest Of Drawer, Dresser, and Study</option>
+                        <option value="6">Bay window, Dresser, Study, Wallpaper</option>
+                        <option value="7">Bay window, Dresser, Study, Wallpaper, Painting</option>
+                        <option value="8">Not Applicable</option>
+                    </select>
+            </div>
+
+
+                <br><br>
+
+                <div class="form-group">
+
+
+                    <h2>Guest Bedroom Checklist</h2>
+                    <label for="GBR_Wardrobe">Guest Bedroom Wardrobe:</label>
+                    <select name="GBR_Wardrobe">
+                        <option value="1">Sliding Wardrobe</option>
+                        <option value="2">Openable Wardrobe</option>
+                        <option value="3">Sliding Wardrobe with Loft</option>
+                        <option value="4">Openable Wardrobe with Loft</option>
+                        <option value="5">Not Applicable</option>
+                    </select>
+
+                    <br><br>
+                    
+                    <label for="GBR_COT">Guest Bedroom Cot:</label>
+                    <select name="GBR_COT">
+                        <option value="1">King Size</option>
+                        <option value="2">Queen Size</option>
+                        <option value="3">Not Applicable</option>
+                    </select>
+                    
+
+                    <br><br>
+
+
+                    <label for="GBR_Reqs">Guest Bedroom Requirements:</label>
+                    <select name="GBR_Reqs">
+                        <option value="1">Chest Of Drawer</option>
+                        <option value="2">Dresser</option>
+                        <option value="3">Bay Window</option>
+                        <option value="4">Dresser, Chest Of Drawer</option>
+                        <option value="5">Bay window, Chest Of Drawer, Dresser, and Study</option>
+                        <option value="6">Bay window, Dresser, Study, Wallpaper</option>
+                        <option value="7">Bay window, Dresser, Study, Wallpaper, Painting</option>
+                        <option value="8">Not Applicable</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <h2>Kids Bedroom Checklist</h2>
+                    <label for="KBR_Wardrobe">Kids Bedroom Wardrobe:</label>
+                    <select name="KBR_Wardrobe">
+                        <option value="1">Sliding Wardrobe</option>
+                        <option value="2">Openable Wardrobe</option>
+                        <option value="3">Sliding Wardrobe with Loft</option>
+                        <option value="4">Openable Wardrobe with Loft</option>
+                        <option value="5">Not Applicable</option>
+                        <!-- Add more MBR wardrobe options as needed -->
+                    </select>
+
+                    <br><br>
+
+                    
+                    <label for="KBR_COT">Kids Bedroom Cot:</label>
+                    <select name="KBR_COT">
+                        <option value="1">King Size</option>
+                        <option value="2">Queen Size</option>
+                        <option value="3">Not Applicable</option>
+                    </select>
+                    
+
+
+                    <br><br>
+
+                    <label for="KBR_Reqs">Kids Bedroom Requirements:</label>
+                    <select name="KBR_Reqs">
+                        <option value="1">Chest Of Drawer</option>
+                        <option value="2">Dresser</option>
+                        <option value="3">Bay Window</option>
+                        <option value="4">Dresser, Chest Of Drawer</option>
+                        <option value="5">Bay window, Chest Of Drawer, Dresser, and Study</option>
+                        <option value="6">Bay window, Dresser, Study, Wallpaper</option>
+                        <option value="7">Bay window, Dresser, Study, Wallpaper, Painting</option>
+                        <option value="8">Not Applicable</option>
+                    </select>
+
+                </div>
+
+                    
+                    <br><br>
+
+
+                    <div class="form-group">
+
+                    <h2>Fourth Bedroom Checklist</h2>
+                    <label for="Four_BR_Wardrobe">Fourth Bedroom Wardrobe:</label>
+                    <select name="Four_BR_Wardrobe">
+                        <option value="1">Sliding Wardrobe</option>
+                        <option value="2">Openable Wardrobe</option>
+                        <option value="3">Sliding Wardrobe with Loft</option>
+                        <option value="4">Openable Wardrobe with Loft</option>
+                        <option value="5">Not Applicable</option>                    
+                    </select>
+
+                    <br><br>
+
+                    
+                    <label for="Four_BR_COT">Fourth Bedroom Cot:</label>
+                    <select name="Four_BR_COT">
+                        <option value="1">King Size</option>
+                        <option value="2">Queen Size</option>
+                        <option value="3">Not Applicable</option>
+                    </select>
+
+                    <br><br>
+
+                    
+
+
+
+                    <label for="Four_BR_Reqs">Fourth Bedroom Requirements:</label>
+                    <select name="Four_BR_Reqs">
+                        <option value="1">Chest Of Drawer</option>
+                        <option value="2">Dresser</option>
+                        <option value="3">Bay Window</option>
+                        <option value="4">Dresser, Chest Of Drawer</option>
+                        <option value="5">Bay window, Chest Of Drawer, Dresser, and Study</option>
+                        <option value="6">Bay window, Dresser, Study, Wallpaper</option>
+                        <option value="7">Bay window, Dresser, Study, Wallpaper, Painting</option>
+                        <option value="8">Not Applicable</option>
+                    </select>
+
+                    </div>
+
+                    <br><br>
+
+
+                    <div class="form-group">
+
+                    <h2>Fifth Bedroom Checklist</h2>
+                    <label for="Five_BR_Wardrobe">Fifth Bedroom Wardrobe:</label>
+                    <select name="Five_BR_Wardrobe">
+                        <option value="1">Sliding Wardrobe</option>
+                        <option value="2">Openable Wardrobe</option>
+                        <option value="3">Sliding Wardrobe with Loft</option>
+                        <option value="4">Openable Wardrobe with Loft</option>
+                        <option value="5">Not Applicable</option>                     
+                    </select>
+
+                    <br><br>
+
+                    
+                    <label for="Five_BR_COT">Fifth Bedroom Cot:</label>
+                    <select name="Five_BR_COT">
+                        <option value="1">King Size</option>
+                        <option value="2">Queen Size</option>
+                        <option value="3">Not Applicable</option>
+                    </select>
+
+                    <br><br>
+
+                    
+
+
+
+                    <label for="Five_BR_Reqs">Fifth Bedroom Requirements:</label>
+                    <select name="Five_BR_Reqs">
+                        <option value="1">Chest Of Drawer</option>
+                        <option value="2">Dresser</option>
+                        <option value="3">Bay Window</option>
+                        <option value="4">Dresser, Chest Of Drawer</option>
+                        <option value="5">Bay window, Chest Of Drawer, Dresser, and Study</option>
+                        <option value="6">Bay window, Dresser, Study, Wallpaper</option>
+                        <option value="7">Bay window, Dresser, Study, Wallpaper, Painting</option>
+                        <option value="8">Not Applicable</option>
+                    </select>
+
+                    </div>
+
+                    <br><br>
+
+
+                    <div class="form-group">
+
+                    
+                    <!-- Living Room Checklist Items -->
+                    <h2>Living Room Checklist</h2>
+                    <label for="Livingroom">Living Room Items:</label>
+                    <select name="Livingroom">
+                        <option value="1">TV unit</option>
+                        <option value="2">TV unit, Partition</option>
+                        <option value="3">TV unit, Partition, False ceiling</option>
+                        <option value="4">TV unit, Partition, False ceiling, Wallpaper</option>
+                        <option value="5">TV unit, Partition, False ceiling, Wallpaper, Wall Panelling</option>
+                        <option value="6">TV unit, Partition, False ceiling, Wallpaper, Wall Panelling, Sofa</option>
+                        <option value="7">TV unit, Partition, False ceiling, Wallpaper, Wall Panelling, Sofa, Centre Table</option>
+                        <option value="8">TV unit, Partition, False ceiling, Wallpaper, Wall Panelling, Sofa, Centre Table, Curtains</option>
+                        <option value="9">Not Applicable</option>
+                    </select>
+                    </div>
+                    
+                    <!-- Add more Living Room checklist items as needed -->
+                    
+                    <br><br>
+
+                    <div class="form-group">
+
+                    
+                    <!-- Dining Room Checklist Items -->
+                    <h2>Dining Room Checklist</h2>
+                    <label for="Diningroom">Dining Room Items:</label>
+                    <select name="Diningroom">
+                        <option value="1">Crockery Unit</option>
+                        <option value="2">Crockery Unit, False ceiling</option>
+                        <option value="3">Crockery Unit, False ceiling, Dining table & Chairs</option>
+                        <option value="4">Crockery Unit, False ceiling, Dining table & Chairs, Partition</option>
+                        <option value="5">Crockery Unit, False ceiling, Dining table & Chairs, Partition, Wallpaper</option>
+                        <option value="6">Crockery Unit, False ceiling, Dining table & Chairs, Partition, Wallpaper, Curtains</option>
+                        <option value="7">Not Applicable</option>
+                    </select>
+
+                    </div>
+                    
+                    <!-- Add more Dining Room checklist items as needed -->
+                    
+                    <br><br>
+                    <div class="form-group">
+                    <!-- Washroom Checklist Items -->
+                        <h2>Washroom Checklist</h2>
+                        <label for="Washroom">Washroom Items:</label>
+                        <select name="Washroom">
+                            <option value="1">Vanity</option>
+                            <option value="2">Vanity, Shower Partition</option>
+                            <option value="3">Vanity, Shower Partition, Mirror</option>
+                            <option value="4">Not Applicable</option>
+                        </select>
+                    </div>  
+                    
+                    <!-- Add more Washroom checklist items as needed -->
+                    
+                    <br><br>
+                <div class="form-group">
+
+
+                    <!-- Foyer Checklist Items -->
+                    <h2>Foyer Checklist</h2>
+                    <label for="Foyer">Foyer Items:</label>
+                    <select name="Foyer">
+                        <option value="1">Shoe rack</option>
+                        <option value="2">Shoe rack, Foyer unit</option>
+                        <option value="3">Shoe rack, Foyer unit, Wallpaper</option>
+                        <option value="4">Shoe rack, Foyer unit, Wallpaper, Wall panelling</option>
+                        <option value="5">Shoe rack, Foyer unit, Wallpaper, Wall panelling, False ceiling</option>
+                        <option value="6">Not Applicable</option>
+                    </select>
+
+                </div>  
+
+                    
+                    <!-- Add more Foyer checklist items as needed -->
+                    
+                    <br><br>
+
+                    <div class="form-group">
+
+                    
+                    <label for="Requirements">Reqs :</label>
+                    <input type="text" class="form-control"  placeholder="Add additional requirements type here ">
+                    
+                    <br><br>
+                    
+                    <label for="floor_plan">Floor Plan (Optional) :</label>
+                    <input type="file" name="floor_plan">
+
+                </div>  
+
+                    
+                    <br><br>
+
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+        </div>
+        <!-- #pricing-tableEND -->
+
+    </div>
+</div>
+
+{% endblock body %}

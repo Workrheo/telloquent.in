@@ -1,0 +1,252 @@
+{% extends 'dbase.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block body %}
+    {% include 'includes/d_sidebar.html' %}
+    {% include 'includes/navbar.html' %}
+    {% include 'includes/alerts.html' %}
+    <div class="page-content">
+        <div class="container-fluid">
+            <!-- Page content goes here -->
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+
+
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Display Project Name -->
+
+                        <h3>Project Checklist</h3>
+
+                        <div class="mb-3">
+                            <label class="form-label">Project Name : {{ data.project_name }}</label>
+                        </div>
+                        
+                        <!-- Display Project Category -->
+                        <div class="mb-3">
+                            <label class="form-label">Project Category : {{ data.get_project_category_display }}</label>
+                        </div>
+                        
+                        <!-- Display Project Type -->
+                        <div class="mb-3">
+                            <label class="form-label">Project Type : {{ data.get_project_type_display }}</label>
+                        </div>
+                        
+                        <!-- Display Kitchen Checklist Items -->
+                        <h3>Kitchen Checklist</h3>
+                        <div class="mb-3">
+                            <label class="form-label">Kitchen Finishes : {{ data.get_kitchen_finish_display }}</label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Kitchen Countertop : {{ data.get_kitchen_finish_display }}</label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Kitchen Dado : {{ data.get_kitchen_dado_display }}</label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Kitchen Loft : {{ data.get_kitchen_loft_display }}</label>
+                        </div>
+                    </div>
+
+
+                  
+                    <div class="col-md-6">
+                        <!-- Display Utility -->
+
+                        <h3>Utility Checklist</h3>
+
+                        <div class="mb-3">
+                            <label class="form-label">Utility : {{ data.get_utility_display }}</label>
+                        </div>
+                        
+                        <!-- Display Master Bedroom Checklist Items -->
+                        <h3>Master Bedroom Checklist</h3>
+                        <div class="mb-3">
+                            <label class="form-label">Master Bedroom Wardrobe : {{ data.get_MBR_Wardrobe_display }}</label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Master Bedroom Cot : {{ data.get_MBR_COT_display }}</label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Master Bedroom Requirements : {{ data.get_MBR_Reqs_display }}</label>
+                        </div>
+
+                        
+                        <!-- Add more sections as needed -->
+                    </div>
+
+
+
+                    <div class="col-md-6">
+                        <!-- Display Utility -->
+
+                       
+                        <!-- Display Master Bedroom Checklist Items -->
+                        <h3>Kids Bedroom Checklist</h3>
+                        <div class="mb-3">
+                            <label class="form-label">kids Bedroom Wardrobe : {{ data.get_KBR_Wardrobe_display }}</label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Kids Bedroom Cot : {{ data.get_KBR_COT_display }}</label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Kids Bedroom Requirements : {{ data.get_KBR_Reqs_display }}</label>
+                        </div>
+                        
+                        <!-- Add more sections as needed -->
+                    </div>
+
+                   
+
+                    <div class="col-md-6">
+                        <!-- Display Utility -->
+
+                       
+                        <!-- Display Master Bedroom Checklist Items -->
+                        <h3>Guest Bedroom Checklist</h3>
+                        <div class="mb-3">
+                            <label class="form-label">kids Bedroom Wardrobe : {{ data.get_GBR_Wardrobe_display }}</label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Kids Bedroom Cot : {{ data.get_GBR_COT_display }}</label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Kids Bedroom Requirements : {{ data.get_GBR_Reqs_display }}</label>
+                        </div>
+                        
+                        <!-- Add more sections as needed -->
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <!-- Display Utility -->
+
+                       
+                        <!-- Display Master Bedroom Checklist Items -->
+                        <h3>Fourth Bedroom Checklist</h3>
+                        <div class="mb-3">
+                            <label class="form-label">Fourth Bedroom Wardrobe : {{ data.get_Four_BR_Wardrobe_display }}</label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Fourth Bedroom Cot : {{ data.get_Four_BR_COT_display }}</label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Fourth Bedroom Requirements : {{ data.get_Four_BR_Reqs_display }}</label>
+                        </div>
+                        
+                        <!-- Add more sections as needed -->
+                    </div>
+
+
+
+                    <div class="col-md-6">
+                        <!-- Display Utility -->
+
+                       
+                        <!-- Display Master Bedroom Checklist Items -->
+                        <h3>Fifth Bedroom Checklist</h3>
+                        <div class="mb-3">
+                            <label class="form-label">Fifth Bedroom Wardrobe : {{ data.get_Five_BR_Wardrobe_display }}</label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Fifth Bedroom Cot : {{ data.get_Five_BR_COT_display }}</label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Fifth Bedroom Requirements : {{ data.get_Five_BR_Reqs_display }}</label>
+                        </div>
+                        
+                        <!-- Add more sections as needed -->
+                    </div>
+
+
+
+                    <div class="col-md-6">
+                        <!-- Display Utility -->
+
+                       
+                        <!-- Display Master Bedroom Checklist Items -->
+                        <h3>Living room Checklist</h3>
+                        <div class="mb-3">
+                            <label class="form-label">Livingroom : {{ data.get_Livingroom_display }}</label>
+                        </div>
+                        
+                        
+                        <!-- Add more sections as needed -->
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <!-- Display Utility -->
+
+                       
+                        <!-- Display Master Bedroom Checklist Items -->
+                        <h3>Dining room Checklist</h3>
+                        <div class="mb-3">
+                            <label class="form-label">Dining room : {{ data.get_Diningroom_display }}</label>
+                        </div>
+                        
+                        
+                        <!-- Add more sections as needed -->
+                    </div>
+
+                    <div class="col-md-6">
+                        <!-- Display Utility -->
+
+                       
+                        <!-- Display Master Bedroom Checklist Items -->
+                        <h3>Washroom Checklist</h3>
+                        <div class="mb-3">
+                            <label class="form-label">Washroom : {{ data.get_Washroom_display }}</label>
+                        </div>
+                        
+                        
+                        <!-- Add more sections as needed -->
+                    </div>
+
+                    <div class="col-md-6">
+                        <!-- Display Utility -->
+
+                       
+                        <!-- Display Master Bedroom Checklist Items -->
+                        <h3>Foyer Checklist</h3>
+                        <div class="mb-3">
+                            <label class="form-label">Foyer : {{ data.get_Foyer_display }}</label>
+                        </div>
+                        
+                        
+                        <!-- Add more sections as needed -->
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <!-- Display Utility -->
+
+                       
+                        <!-- Display Master Bedroom Checklist Items -->
+                        <h3>Additional Requirements</h3>
+                        <div class="mb-3">
+                            <label class="form-label">Additional requirements from the customer : {{ data.Requirements }}</label>
+                        </div>
+                        
+                        
+                        <!-- Add more sections as needed -->
+                    </div>
+                    
+
+
+                    
+                </div>
+                </div>
+
+                
+                <hr>
+                
+                <!-- Add more sections or fields as needed -->
+                
+                <input type="submit" value="Update Checklist" style="display: none;">
+            </form>
+        </div>
+    </div>
+{% endblock body %}

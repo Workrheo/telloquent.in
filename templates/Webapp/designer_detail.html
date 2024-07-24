@@ -1,0 +1,198 @@
+
+{% extends 'ibase.html' %}
+
+{% load static %}
+
+
+
+{% block body %}
+
+        <!-- start banner section -->
+        
+        <section class="py-0 parallax overlap-height" data-parallax-background-ratio="0.5" style="background-image: url('{{designer.user_profile.cover_photo.url}}');">
+            <div class="opacity-light bg-medium-slate-blue"></div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 position-relative text-center one-fourth-screen d-flex flex-column justify-content-center sm-h-350px">
+                    <span class="text-uppercase text-small alt-font letter-spacing-5px text-white d-inline-block margin-20px-bottom font-weight-500 sm-margin-10px-bottom">{{designer_detail.user.first_name}} {{designer_detail.user.last_name}}</span>
+                    <h2 class="alt-font text-white font-weight-600 text-uppercase d-block mb-0">{{designer_detail.company}}</h2>
+                </div>
+            </div>
+        </section>
+        <!-- end banner section -->
+        <!-- start section -->
+        <section class="overflow-visible pb-0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 text-center overlap-section">
+                        <div class="overlap-section-inner">
+                        	
+                            <img class="rounded-circle sm-w-30 xs-w-40 border-all border-width-12px border-color-white box-shadow-extra-large" src="{{designer.user_profile.profile_picture.url}}" alt=""/>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-11">
+                        <div class="row">
+                            <div class="col-lg-4 padding-five-right lg-padding-15px-right md-margin-50px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
+                                <h5 class="alt-font text-extra-dark-gray font-weight-500 margin-4-rem-bottom letter-spacing-minus-1px">Designer  details</h5>
+                                <ul class="list-unstyled">
+                                	
+                                    <li class="border-bottom border-color-medium-gray padding-20px-bottom margin-20px-bottom"><span class="text-uppercase text-extra-dark-gray w-35 d-inline-block font-weight-500 alt-font text-medium">Email:</span>{{designer.user.email}}</li>
+                                    <li class="border-bottom border-color-medium-gray padding-20px-bottom margin-20px-bottom"><span class="text-uppercase text-extra-dark-gray w-35 d-inline-block font-weight-500 alt-font text-medium">Phone:</span>{{designer.offical_number}}</li>
+                                    <li class="border-bottom border-color-medium-gray padding-20px-bottom margin-20px-bottom"><span class="text-uppercase text-extra-dark-gray w-35 d-inline-block font-weight-500 alt-font text-medium">Experience:</span>{{designer.experience}} years</li>
+                                    <li class="border-bottom border-color-medium-gray padding-20px-bottom margin-20px-bottom"><span class="text-uppercase text-extra-dark-gray w-35 d-inline-block font-weight-500 alt-font text-medium">Website:</span>{{designer.website}}</li>
+                                    <li class="border-bottom border-color-medium-gray padding-20px-bottom margin-20px-bottom"><span class="text-uppercase text-extra-dark-gray w-35 d-inline-block font-weight-500 alt-font text-medium">Address:</span>{{designer.user_profile.address}}</li>
+                                    
+
+                                </ul>
+                            </div>
+                            <div class="col-lg-7 offset-lg-1 wow animate__fadeIn" data-wow-delay="0.4s">
+                                <span class="alt-font text-medium text-uppercase font-weight-500 margin-20px-bottom d-inline-block text-extra-dark-gray">About {{designer}}</span>
+
+                                
+                                <p>{{designer.designer_description}}</p>
+
+
+                                <p>       
+                                	 <span class="alt-font text-medium text-uppercase font-weight-500 margin-20px-bottom d-inline-block text-extra-dark-gray">Working Hours</span>  
+
+                                	
+				                    {% for details in opening_hours %}
+				                    <br>
+
+				                        {{details}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {% if details.is_closed %}Closed{% else %} Opens at {{ details.from_hour }}  &nbsp; &nbsp; Closes at {{details.to_hour}} {% endif %}
+
+				                   	
+                                    
+                                    {% endfor %}
+				                      
+				    
+                				</p>
+
+                                
+                                <a href="{% url 'appointment' designer.id %}" class="btn btn-link btn-large text-extra-dark-gray">Click here to Book consultation now</a> &nbsp; &nbsp; &nbsp;
+                                <a href="{% url 'checklist' designer.id %}" class="btn btn-link btn-large text-extra-dark-gray">Click here to Share the Checklist with Designer</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="p-0 position-relative overflow-visible wow animate__fadeIn">
+            <h5> Project Designs and Project Executed Images </h5>
+            <div class="slider-blog-banner swiper-container black-move" data-slider-options='{ "loop": true, "centeredSlides": true, "slidesPerView": "auto", "speed": 1000, "keyboard": { "enabled": true, "onlyInViewport": true }, "autoplay": { "delay": 1500, "disableOnInteraction": false }, "pagination": { "el": ".swiper-pagination", "clickable": true }, "navigation": { "nextEl": ".swiper-button-next-nav", "prevEl": ".swiper-button-previous-nav" } }'>
+                <div class="swiper-wrapper">
+                    <!-- start slider item -->
+
+                      
+
+
+                    {% for image in project_images %}
+
+                    <div class="swiper-slide w-55 sm-w-65">
+                        <div class="w-100 padding-15px-lr sm-padding-10px-lr xs-padding-5px-lr">
+                            <img src="{{image.image.url}}" alt="" />
+                        </div>
+                    </div>
+
+                      {% endfor %}
+                    
+                  
+                    <!-- end slider item -->
+                </div>
+                <!-- start slider pagination -->
+                <!--<div class="swiper-pagination swiper-light-pagination"></div>-->
+                <!-- end slider pagination -->
+                <!-- start slider navigation -->
+                <!--<div class="swiper-button-next-nav swiper-button-next rounded-circle slider-navigation-style-07"><i class="feather icon-feather-arrow-right"></i></div>
+                <div class="swiper-button-previous-nav swiper-button-prev rounded-circle slider-navigation-style-07"><i class="feather icon-feather-arrow-left"></i></div>-->
+                <!-- end slider navigation -->
+            </div>  
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+
+    </br>
+       
+
+        <section class="p-0 position-relative overflow-visible wow animate__fadeIn">
+            <h5> Designer Office / Experience centre Pics </h5>
+            <div class="slider-blog-banner swiper-container black-move" data-slider-options='{ "loop": true, "centeredSlides": true, "slidesPerView": "auto", "speed": 1000, "keyboard": { "enabled": true, "onlyInViewport": true }, "autoplay": { "delay": 1500, "disableOnInteraction": false }, "pagination": { "el": ".swiper-pagination", "clickable": true }, "navigation": { "nextEl": ".swiper-button-next-nav", "prevEl": ".swiper-button-previous-nav" } }'>
+                <div class="swiper-wrapper">
+                    <!-- start slider item -->
+                	  {% for image in designer_office_images %}
+                    <div class="swiper-slide w-55 sm-w-65">
+                        <div class="w-100 padding-15px-lr sm-padding-10px-lr xs-padding-5px-lr">
+                            <img src="{{image.image.url}}" alt="" />
+                        </div>
+                    </div>
+                      {% endfor %}
+                    </div>
+                    <!-- start slider pagination -->
+                    <!--<div class="swiper-pagination swiper-light-pagination"></div>-->
+                    <!-- end slider pagination -->
+                    <!-- start slider navigation -->
+                    <!--<div class="swiper-button-next-nav swiper-button-next rounded-circle slider-navigation-style-07"><i class="feather icon-feather-arrow-right"></i></div>
+                    <div class="swiper-button-previous-nav swiper-button-prev rounded-circle slider-navigation-style-07"><i class="feather icon-feather-arrow-left"></i></div>-->
+                    <!-- end slider navigation -->
+                </div>  
+            </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-4 col-sm-4 text-center text-sm-end alt-font text-extra-dark-gray text-uppercase text-medium font-weight-500 xs-margin-10px-bottom">Follow us</div>
+                    <div class="col-12 col-md-4 col-sm-2"><div class="w-100 h-1px bg-medium-gray xs-margin-15px-tb"></div></div>
+                    <div class="col-12 col-md-4 col-sm-6 text-center text-sm-start social-icon-style-02">
+                        <ul class="small-icon">
+
+
+                            <li><a class="facebook" href="{{designer.facebook_link}}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a class="youtube" href="{{designer.youtube_link}}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                            <li><a class="instagram" href="{{designer.instagram_link}}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="fancy-box-background fancy-box-col bg-light-gray p-0">
+            <div class="container-fluid">
+                <div class="row row-cols-1 row-cols-sm-2 justify-content-center">
+                    <!-- start prev pagination -->
+                    <div class="col fancy-box-item px-0">
+                        <a href="{% url 'designer_list' %}" class="d-flex h-100 align-items-center justify-content-center justify-content-lg-between justify-content-sm-start padding-7-rem-lr padding-4-rem-tb xl-padding-3-rem-all xs-padding-2-rem-tb xs-no-padding-lr">
+                            <div class="bg-banner-image cover-background" style="background-image: url({% static 'webapp/images/single-project-page-01-img24.jpg' %})"></div>
+                            <div class="light alt-font text-extra-dark-gray font-weight-500 btn-slide-icon-left text-uppercase me-lg-auto"><i class="line-icon-Arrow-OutLeft icon-medium align-middle margin-20px-right"></i><span class="d-none d-lg-inline-block text-small">Prev</span></div>
+                            <span class="light text-extra-large alt-font text-extra-dark-gray d-block font-weight-500">Designers List</span>
+                        </a>
+                    </div>
+                    <!-- end prev pagination -->
+                    <!-- start next pagination -->
+                    <div class="col fancy-box-item px-0">
+                        <a href="{% url 'appointment' designer.id %}" class="d-flex h-100 align-items-center justify-content-center justify-content-sm-end justify-content-lg-between padding-7-rem-lr padding-4-rem-tb xl-padding-3-rem-all xs-padding-2-rem-tb xs-no-padding-lr">
+                            <div class="bg-banner-image cover-background" style="background-image: url({% static 'webapp/images/single-project-page-01-img23.jpg' %})"></div>
+                            <span class="light text-extra-large alt-font text-extra-dark-gray d-block font-weight-500 me-lg-auto">Book consultation</span>
+                            <div class="light alt-font text-extra-dark-gray font-weight-500 btn-slide-icon text-uppercase"><span class="d-none d-lg-inline-block text-small">Next</span><i class="line-icon-Arrow-OutRight icon-medium align-middle margin-20px-left"></i></div>
+                        </a>
+                    </div>
+                    <!-- end next pagination -->
+                </div>
+            </div>
+        </section>
+
+
+{% endblock body %}

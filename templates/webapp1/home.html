@@ -1,0 +1,329 @@
+{% extends 'wbase.html' %}
+
+{% load static %}
+
+{% block body %}
+
+
+{% include 'includes/w_header.html' %}
+
+
+
+{% include 'includes/alerts.html' %}
+
+
+<div class="hero v1 section-padding bg-zoom">
+    <div class="overlay op-3"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="hero__title places-tab">
+                    What's Your Plan Today ?
+                </h1>
+                <h1 class="hero__title events-tab">
+                    Explore great events.
+                </h1>
+                <p class="hero__description">
+                    All the top locations – Interior Designers
+                </p>
+            </div>
+            <div class="col-md-12 text-center mar-top-20">
+                
+                <form class="hero__form v1 bg-white" action="" method="GET">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-12">
+                            <!--input class="hero__form-input custom-select" type="text" name="place-event" id="place-event" placeholder="What are you looking for?" /-->
+                            <input class="hero__form-input" type="text" name="keyword" placeholder="Type Designer name or Project name">
+
+                        </div>
+                        <div class="col-lg-5 col-md-12">
+                            <input class="hero__form-input" type="text" name="address" class="location-field-text filter" id="id_address" required placeholder="All Locations">
+                            <input class="hero__form-input" type="hidden" name="lat" value="" id="id_latitude">
+                            <input class="hero__form-input" type="hidden" name="lng" value="" id="id_longitude">
+                            <!--select class="hero__form-input custom-select">
+
+                                <input type="text" name="address" class="location-field-text filter" id="id_address" required placeholder="All Locations">
+													<input type="hidden" name="lat" value="" id="id_latitude">
+													<input type="hidden" name="lng" value="" id="id_longitude">
+                                <!--option>Select Location </option>
+                                <option>New York</option>
+                                <option>California</option>
+                                <option>Washington</option>
+                                <option>New Jersey</option>
+                                <option>Los Angeles</option>
+                                <option>Florida</option>
+                            </select-->
+                        </div>
+                        
+                        <div class="col-lg-2 col-md-12">
+                            <div class="submit_btn text-right md-left">
+                                <button class="btn v3 text-right" type="submit"><i class="ion-search" aria-hidden="true"></i> Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Hero section ends-->
+<!--Promo Category starts-->
+<!--div class="hero-catagory mar-top-30 section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hero-catagory-wrapper v1">
+                    <a href="grid-fullwidth.html" class="hero-category-content v1">
+                        <i class="icofont-hotel"></i>
+                        <p class="name">Interior</p>
+                        <p class="d-name">22 Locations</p>
+                    </a>
+                    <a href="grid-fullwidth.html" class="hero-category-content v1">
+                        <i class="icofont-restaurant"></i> <br>
+                        <p class="name">Restaurent</p>
+                        <p class="d-name">15 Locations</p>
+                    </a>
+                    <a href="grid-fullwidth.html" class="hero-category-content v1">
+                        <i class="icofont-shopping-cart"></i><br>
+                        <p class="name">Shopping</p>
+                        <p class="d-name">30 Locations</p>
+                    </a>
+                    <a href="grid-fullwidth.html" class="hero-category-content v1">
+                        <i class="icofont-cut"></i> <br>
+                        <p class="name">Beauty & spa</p>
+                        <p class="d-name">8 Locations</p>
+                    </a>
+                    <a href="grid-fullwidth.html" class="hero-category-content v1">
+                        <i class="icofont-hospital"></i> <br>
+                        <p class="name">Hospital</p>
+                        <p class="d-name">10 Locations</p>
+                    </a>
+                    <a href="grid-fullwidth.html" class="hero-category-content v1">
+                        <i class="icofont-list"></i> <br>
+                        <p class="name">Services</p>
+                        <p class="d-name">28 Locations</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div-->
+<!--Promo Category ends-->
+<!--Popular City starts-->
+<div class="popular-cities section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <h2 class="section-title v1">Explore Our Interior Designers</h2>
+            </div>
+            <div class="col-md-12">
+                <div class="swiper-container popular-place-wrap">
+                    <div class="swiper-wrapper">
+                        {% for designer in designers %}
+                        <div class="swiper-slide popular-item">
+                            <div class="single-place">
+                                {% if designer.user_profile.cover_photo %}
+                                <img class="single-place-image" src="{{ designer.user_profile.cover_photo.url }}" alt="place-image" width="100" height="100">
+                                {% else %}
+                                <img class="single-place-image" src="{% static 'webapp/images/category/italy-5.jpg' %}" alt="place-image" width="100" height="100">
+                                {% endif %}
+                                <div class="single-place-content">
+                                    <h2 class="single-place-title">
+                                        <a href="grid-fullwidth-map.html">{{ designer }}</a>
+                                    </h2>
+                                    <ul class="single-place-list">
+                                        <!--li><span>5</span> Cities</li>
+                                        <li><span>255</span> Listing</li-->
+                                    </ul>
+                                    <a class="btn v6 explore-place" href="grid-fullwidth-map.html">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                      
+                    </div>
+                </div>
+                <div class="slider-btn v1 popular-next"><i class="ion-arrow-right-c"></i></div>
+                <div class="slider-btn v1 popular-prev"><i class="ion-arrow-left-c"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--mobile app start-->
+<div class="app-section section-padding pad-top-70" style="background-image: url("{% static 'webapp/images/bg/bg2.png' %}")>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="app-content">
+                    <h2>Looking for the Best Service Provider? <span>Get the App!</span></h2>
+                    <ul>
+                        <li><i class="ion-android-checkbox-outline" aria-hidden="true"></i> Find nearby listings</li>
+                        <li><i class="ion-android-checkbox-outline" aria-hidden="true"></i> Easy service enquiry</li>
+                        <li><i class="ion-android-checkbox-outline" aria-hidden="true"></i> Listing reviews and ratings</li>
+                        <li><i class="ion-android-checkbox-outline" aria-hidden="true"></i> Manage your listing, enquiry and reviews</li>
+                    </ul>
+                    <div class="device-logo mar-top-40 xs-center">
+                        <a href="#"><img src="{% static 'webapp/images/others/android.png' %}" alt="..."> </a>
+                        <a href="#"><img src="{% static 'webapp/images/others/apple.png' %}" alt="..."> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="app-img text-center">
+                    <img src="{% static 'webapp/images/others/app-image-1.png' %}" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--mobile app ends-->
+<!--Trending Place starts-->
+<div class="trending-places section-padding pad-bot-130 bg-pn">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <h2 class="section-title v1">Interior Designer Portfolios</h2>
+            </div>
+            <div class="col-md-12">
+                <div class="swiper-container trending-place-wrap">
+                    <div class="swiper-wrapper">
+                        {% for designer in designers %}
+                        <div class="swiper-slide trending-place-item">
+                            <div class="trending-img">
+                                {% if designer.user_profile.profile_picture %}
+                                <img src="{{ designer.user_profile.cover_photo.url }}" alt="#">
+                                {% else  %}
+
+                                <img src="{% static 'webapp/images/category/places/place-1.jpg' %}" alt="#">
+                                {% endif %}
+                                <span class="trending-rating-green">7</span>
+                                <span class="save-btn"><i class="icofont-heart"></i></span>
+                            </div>
+                            <div class="trending-title-box">
+                                <h4><a href="single-listing-one.html">{{designer}}</a></h4>
+                               
+                                <ul class="trending-address">
+                                    <li><i class="ion-ios-location"></i>
+                                        <p>{{designer.user_profile.address}}</p>
+                                    </li>
+                                    <li><i class="ion-ios-telephone"></i>
+                                        <p>+91 992013337</p>
+                                    </li>
+                                    <li><i class="ion-android-globe"></i>
+                                        <p> <a href="{% url 'designer_detail' designer.designer_slug %}">Click here to view Portfolio</a> </p>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+                </div>
+                <div class="trending-pagination"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Trending Place ends-->
+
+
+<!--Testimonial Section start-->
+<div class="hero-client-section pad-bot-70 section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <h2 class="section-title v1">People Talking About Us</h2>
+            </div>
+            <div class="col-md-12 mar-bot-70">
+                <div class="testimonial-wrapper swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide single-testimonial-item">
+                            <div class="testimonial-img text-center">
+                                <img src="{% static 'webapp/images/clients/client_1.jpg' %}" alt="...">
+                            </div>
+                            <div class="testimonial-content text-center">
+                                <ul class="product-rating">
+                                    <li><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star-half"></i></li>
+                                    <li><i class="ion-android-star-half"></i></li>
+                                </ul>
+                                <h5>Frank Jane</h5>
+                                <span>CEO, Bloomberg</span>
+                                <p>Lorem ipsum dolor adipisicing elit.assumenda quis corrupti iusto at laborum hic qui, minus, quasi modi assumenda quis corrupti chika.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide single-testimonial-item">
+                            <div class="testimonial-img text-center">
+                                <img src="{% static 'webapp/images/clients/client_3.jpg' %}" alt="...">
+                            </div>
+                            <div class="testimonial-content text-center">
+                                <ul class="product-rating">
+                                    <li><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star-half"></i></li>
+                                    <li><i class="ion-android-star-half"></i></li>
+                                </ul>
+                                <h5>Amanda Gordon</h5>
+                                <span>CMO, TechTelsa</span>
+                                <p>Lorem ipsum dolor adipisicing elit.assumenda quis corrupti iusto at laborum hic qui, minus, quasi modi assumenda quis corrupti.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide single-testimonial-item">
+                            <div class="testimonial-img text-center">
+                                <img src="{% static 'webapp/images/clients/client_2.jpg' %}" alt="...">
+                            </div>
+                            <div class="testimonial-content text-center">
+                                <ul class="product-rating">
+                                    <li><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star-half"></i></li>
+                                    <li><i class="ion-android-star-half"></i></li>
+                                </ul>
+                                <h5>Lee Priest</h5>
+                                <span>MD, Cornia Inc</span>
+                                <p>Lorem ipsum dolor adipisicing elit.assumenda quis corrupti iusto at laborum hic qui, minus, quasi modi assumenda quis corrupti. Lorem ipsum dolor.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide single-testimonial-item">
+                            <div class="testimonial-img text-center">
+                                <img src="{% static 'webapp/images/clients/client_4.jpg' %}" alt="...">
+                            </div>
+                            <div class="testimonial-content text-center">
+                                <ul class="product-rating">
+                                    <li><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star"></i></li>
+                                    <li><i class="ion-android-star-half"></i></li>
+                                    <li><i class="ion-android-star-half"></i></li>
+                                </ul>
+                                <h5>Mark Henry</h5>
+                                <span>CEO, Alpha Inc</span>
+                                <p>Lorem ipsum dolor adipisicing elit.assumenda quis corrupti iusto at laborum hic qui, minus, quasi modi assumenda quis corrupti. Lorem ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="client-pagination"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Testimonial Section ends-->
+
+<!-- Scroll to top starts-->
+<span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
+<!-- Scroll to top ends-->
+</div>
+
+
+
+
+
+
+
+{% endblock body%}

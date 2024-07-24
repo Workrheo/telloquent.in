@@ -1,0 +1,293 @@
+{% extends 'wbase.html' %}
+
+{% load static %}
+
+{% block body %}
+
+
+{% include 'includes/w_header.html' %}
+
+
+
+{% include 'includes/alerts.html' %}
+
+
+<div class="video-area listing-details-wrapper">
+    <div class="video-container">
+        <div class="overlay op-5"></div>
+        <div id="video-wrapper" style="background-image: url({% if designer.user_profile.cover_photo %} {{ designer.user_profile.cover_photo.url }})"> </div>
+        {% else %} <a class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=dqD0SqMNtks'}"></a>
+        {% endif %}
+
+        <div class="container video-content list-details-title v3">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="single-listing-title float-left">
+                        <p><a href="#" class="btn v6">Hotel</a></p>
+                        <h2>{{designer.designer_name}} <i class="icofont-tick-boxed"></i></h2>
+                        <p><i class="ion-ios-location"></i> {{designer.address}}</p>
+                        <div class="list-ratings">
+                            <span class="ion-android-star"></span>
+                            <span class="ion-android-star"></span>
+                            <span class="ion-android-star"></span>
+                            <span class="ion-android-star"></span>
+                            <span class="ion-android-star-half"></span>
+                            <a href="#">(31 Reviews)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="list-details-btn text-right sm-left">
+                        <div class="save-btn">
+                            <a href="#" class="btn v3 white"><i class="ion-heart"></i> Save</a>
+                        </div>
+                        <div class="share-btn">
+                            <a href="#" class="btn v3 white"><i class="ion-android-share-alt"></i> Share</a>
+                            <ul class="social-share">
+                                <li class="bg-fb"><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                <li class="bg-tt"><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                <li class="bg-ig"><a href="#"><i class="ion-social-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Listing Details Hero ends-->
+<!--Listing Details Info starts-->
+<div class="list-details-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div id="list-menu" class="list_menu">
+                    <ul class="list-details-tab fixed_nav">
+                        <li class="nav-item active"><a href="#overview" class="active">Overview</a></li>
+                        <li class="nav-item"><a href="#gallery">Gallery</a></li>
+                        <li class="nav-item"><a href="#reviews">Reviews</a></li>
+                        <li class="nav-item"><a href="#add_review">Add Review</a></li>
+                    </ul>
+                </div>
+                <!--Listing Details starts-->
+                <div class="list-details-wrap">
+                    <div id="overview" class="list-details-section">
+                        <h4>Overview</h4>
+                        <div class="overview-content">
+                            <p class="mar-bot-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta consectetur et porro voluptatem maiores quidem inventore harum explicabo deserunt fuga minima sed, sit nemo expedita. Dolor aliquid rerum recusandae excepturi.</p>
+                            <p class="mar-bot-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, dicta, impedit. Eveniet incidunt provident minima totam aut facilis tenetur quam officia omnis dolorem! Autem iste fugit mollitia rerum quae, veritatis perferendis voluptas magni aliquam consequuntur, minima repellendus eveniet laboriosam iure.</p>
+                        </div>
+                        <div class="mar-top-20">
+                            <h6>Amenities</h6>
+                            <ul class="listing-features">
+                                {% for category in categories %}
+                                <li><i class="icofont-rocket-alt-1"></i> {{category}}</li>
+                                {% endfor  %}
+                              
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="gallery" class="list-details-section">
+                        <h4>Gallery</h4>
+                        <!--Carousel Wrapper-->
+                        <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails list-gallery" data-ride="carousel">
+                            <!--Slides-->
+                            <div class="carousel-inner" role="listbox">
+                                {% for image in project_images %}
+        
+
+                                <div class="carousel-item active " >
+                                    <img class="d-block w-100" src="{{image.image.url}}" alt="slide">
+                                </div>
+                               {% endfor %}
+                            </div>
+                            <!--Controls starts-->
+                            <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
+                                <span class="ion-arrow-left-c" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
+                                <span class="ion-arrow-right-c" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!--Controls ends-->
+                            <ol class="carousel-indicators  list-gallery-thumb">
+                                {% for image in project_images %}
+                                <li data-target="#carousel-thumb" data-slide-to="0"><img class="img-fluid d-block w-100" src="{{image.image.url}}" alt="..." width="50"></li>
+                                {% endfor %}
+                            </ol>
+                        </div>
+                        
+                        <!--/.Carousel Wrapper-->
+                    </div>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+
+                  <br>
+                  <br>
+
+
+                
+                    
+                   
+                </div>
+                <!--Listing Details ends-->
+                <!--Similar Listing  starts-->
+
+                
+
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="listing-sidebar">
+                    <div class="sidebar-widget info">
+                        <h3><i class="ion-android-calendar"></i>Book / Create Checklist</h3>
+                        <div class="row">
+                            <div class="col-md-12 mar-bot-15">
+                              
+                            </div>
+                           
+                           
+                           
+                        </div>
+                        <div class="book-btn text-center">
+                            <a href="{% url 'appointment' designer.id %}"> Request To Book</a>
+                        </div>
+
+                        <div class="book-btn text-center">
+                            <a href="{% url 'checklist' designer.id %}"> Create Checklist</a>
+                        </div>
+
+                       
+                    </div>
+                    <div class="sidebar-widget">
+                        <div id="map"></div>
+                        <div class="address">
+                            {% if designer.user_profile.address %}
+                            <span class="ion-ios-location"></span>
+                            <p> {{designer.user_profile.address}}</p>
+                            {% endif %}
+                        </div>
+                        <div class="address">
+                            <span class="ion-ios-telephone"></span>
+                            <p> +91 7406096991</p>
+                        </div>
+                        <div class="address">
+                            <span class="ion-android-globe"></span>
+                            <p>combinedesign.in</p>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget">
+                        <div class="business-time">
+                            <div class="business-title">
+                                <h6><i class="ion-android-alarm-clock"></i> Business Hours</h6>
+                                <span class="float-right">Open Now</span>
+                            </div>
+                            <ul class="business-hours">
+                                <li class="business-open">
+                                    <span class="day">Saturday</span>
+                                    <div class="atbd_open_close_time">
+                                        <span class="time">11:00 am</span> - <span class="time">06:00 pm</span>
+                                    </div>
+                                </li>
+                                <li class="business-open trend-closed">
+                                    <span class="day">Sunday</span>
+                                    <div class="atbd_open_close_time">
+                                        <span class="time">Closed</span>
+                                    </div>
+                                </li>
+                                <li class="business-open">
+                                    <span class="day">Monday</span>
+                                    <div class="atbd_open_close_time">
+                                        <span class="time">10:00 am</span> - <span class="time">06:00 pm</span>
+                                    </div>
+                                </li>
+                                <li class="business-open">
+                                    <span class="day">Tuesday</span>
+                                    <div class="atbd_open_close_time">
+                                        <span class="time">10:00 am</span> - <span class="time">06:30 pm</span>
+                                    </div>
+                                </li>
+                                <li class="business-open">
+                                    <span class="day">Wednesday</span>
+                                    <div class="atbd_open_close_time">
+                                        <span class="time">09:00 am</span> - <span class="time">05:00 pm</span>
+                                    </div>
+                                </li>
+                                <li class="business-open">
+                                    <span class="day">Thursday</span>
+                                    <div class="atbd_open_close_time">
+                                        <span class="time">10:00 am</span> - <span class="time">07:00 pm</span>
+                                    </div>
+                                </li>
+                                <li class="business-open">
+                                    <span class="day">Friday</span>
+                                    <div class="atbd_open_close_time">
+                                        <span class="time">11:00 am</span> - <span class="time">06:00 pm</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget">
+                        <div class="coupon-widget" style="background-image: url(images/category/coupon/coupon-bg-1.jpg);">
+                            <div class="overlay op-5"></div>
+                            <a href="#" class="coupon-top">
+                                <span class="coupon-link-icon"></span>
+                                <h3>Book Now &amp; get 20% discount</h3>
+                                <div class="daily-deals-wrap v1">
+                                    <!-- countdown start -->
+                                    <div class="countdown-deals text-center" data-countdown="2019/12/01"></div>
+                                    <!-- countdown end -->
+                                </div>
+                            </a>
+                            <div class="coupon-bottom">
+                                <p>Coupon Code</p>
+                                <div class="coupon-code">DL76T</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget follow">
+                        <div class="follow-img">
+                            <img src="{% static 'webapp/images/clients/reviewer-1.png' %}" class="img-fluid" alt="#">
+                            <h6>Christine Evans</h6>
+                            <span>New York</span>
+                        </div>
+                        <ul class="social-counts">
+                            <li>
+                                <h6>26</h6>
+                                <span>Listings</span>
+                            </li>
+                            <li>
+                                <h6>326</h6>
+                                <span>Followers</span>
+                            </li>
+                            <li>
+                                <h6>12</h6>
+                                <span>Following</span>
+                            </li>
+                        </ul>
+                        <div class="text-center mar-bot-25">
+                            <a href="#" class="btn v3"><i class="icofont-eye-alt"></i> Follow</a>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget ad-box">
+                        <a href="#"><img src="="{% static 'webapp/images/others/ad-1.jpg' %}" alt="..."></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Listing Details Info ends-->
+<!-- Scroll to top starts-->
+<span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
+<!-- Scroll to top ends-->
+</div>
+
+
+
+
+{% endblock body%}

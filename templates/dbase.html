@@ -1,0 +1,87 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Telloquent </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="Workflow automation software" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{% static 'accounts/assets/images/favicon.ico' %}">
+
+        <!-- App css -->
+        <link href="{% static 'accounts/assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'accounts/assets/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'accounts/assets/css/metisMenu.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'accounts/plugins/daterangepicker/daterangepicker.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'accounts/assets/css/app.min.css' %}" rel="stylesheet" type="text/css" />
+        {% if 'profile' in request.path %}
+
+
+        <script src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_API_KEY}}&libraries=places&callback=initAutoComplete" async defer></script>
+        {% endif %}
+        
+        <script src="{% static 'accounts/assets/js/custom.js' %}"></script>
+    </head>
+
+    <body>
+
+         
+	{% block body %}
+
+	{% endblock body%}
+
+
+
+    <footer class="footer text-center text-sm-start">
+        &copy; <script>
+            document.write(new Date().getFullYear())
+        </script> Telloquent  <span class="text-muted d-none d-sm-inline-block float-end">Crafted with <i
+                class="mdi mdi-heart text-danger"></i> by Telloquent </span>
+    </footer><!--end footer-->
+</div>
+<!-- end page content -->
+</div>
+<!-- end page-wrapper -->
+
+
+
+
+<!-- jQuery  -->
+<script src="{% static 'accounts/assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'accounts/assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'accounts/assets/js/metismenu.min.js' %}"></script>
+<script src="{% static 'accounts/assets/js/waves.js' %}"></script>
+<script src="{% static 'accounts/assets/js/feather.min.js' %}"></script>
+<script src="{% static 'accounts/assets/js/simplebar.min.js' %}"></script>
+<script src="{% static 'accounts/assets/js/moment.js' %}"></script>
+<script src="{% static 'accounts/plugins/daterangepicker/daterangepicker.js' %}"></script>
+
+<script src="{% static 'accounts/plugins/apex-charts/apexcharts.min.js' %}"></script>
+<script src="{% static 'accounts/assets/pages/jquery.projects_overview.init.js' %}"></script>
+
+
+
+
+<script src="{% static 'accounts/plugins/tiny-editable/mindmup-editabletable.js' %}"></script>
+<script src="{% static 'accounts/plugins/tiny-editable/numeric-input-example.js' %}"></script>
+<script src="{% static 'accounts/plugins/bootable/bootstable.js' %}"></script> 
+<script src="{% static 'accounts/assets/pages/jquery.tabledit.init.js' %}"></script>
+
+
+
+
+
+<!-- App js -->
+<script src="{% static 'accounts/assets/js/app.js' %}"></script>
+
+</body>
+
+</html>
+        

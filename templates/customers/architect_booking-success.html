@@ -1,0 +1,51 @@
+{% extends 'ibase1.html' %}
+
+{% load static %}
+
+{% block body %}
+
+
+
+
+
+{% include 'includes/alerts.html' %}
+
+
+<br>
+<br>
+
+{% for i in messages %}
+                          <p style="color:green;">{{i}}</p>
+                          {% endfor %}
+
+<div id="wrapper-content" class="wrapper-content pt-10 pb-13">
+    <div class="container">
+
+        <div class="card mb-3">
+            <img class="card-img-top"
+                 src="{% static 'webapp/acbanner.jpg' %}"
+                 alt="Card image cap" style="width:1500px; height:500px ;">
+
+
+
+            <div class="card-body">
+                <h5 class="card-title">Appointment Booked Successfully </h5>
+                <p class="card-text">Architect name : {{data.architect.first_name}} {{data.architect.last_name}}</p>
+                <p class="card-text">Architect email : {{data.architect}}</p>
+                <p class="card-text">Appointment Date and time : {{data.a_date}} {{data.a_timing}}</p>
+
+               
+            </div>
+
+            <a href="/" class="btn btn-primary">Click here to go to the homepage</a>
+
+
+            <!--button href="/" type="link" class="btn btn-primary">Click here to go to the homepage</button-->
+        </div>
+       
+       
+        
+    </div>
+</div>
+
+{% endblock body %}

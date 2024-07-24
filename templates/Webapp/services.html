@@ -1,0 +1,248 @@
+{% extends 'ibase.html' %}
+
+{% load static %}
+
+
+
+{% block body %}
+
+        <!-- end header -->
+        <!-- start page title -->
+        <section class="parallax bg-extra-dark-gray" data-parallax-background-ratio="0.5" style="background-image:url({% static 'webapp/images/what-we-offers-bg-2.jpg' %});">
+            <div class="opacity-extra-medium bg-extra-dark-gray"></div>
+            <div class="container">
+                <div class="row align-items-stretch justify-content-center small-screen">
+                    <div class="col-12 col-xl-6 col-lg-7 col-md-8 position-relative page-title-extra-small text-center d-flex justify-content-center flex-column">
+                        <h1 class="alt-font text-white opacity-6 margin-20px-bottom">Our Services</h1>
+                        <h2 class="text-white alt-font font-weight-500 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom">Your Life's Work,Powered By Our Life's Work</h2>
+                    </div>
+                    <div class="down-section text-center"><a href="#down-section" class="section-link"><i class="ti-arrow-down icon-extra-small text-white bg-transparent-black padding-15px-all xs-padding-10px-all border-radius-100"></i></a></div>
+                </div>
+            </div>
+        </section>
+        <!-- end page title -->
+        <!-- start section -->
+        <section id="down-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 position-relative sm-margin-30px-bottom">
+                        <img class="border-radius-5px" src="{% static 'webapp/images/what-we-offers-01.jpg' %}" alt="" />
+                        <a href="https://www.youtube.com/watch?v=g0f_BRYJLJE" class="popup-youtube video-icon-box video-icon-large absolute-middle-center">
+                            <span>
+                                <span class="video-icon bg-gradient-light-purple-light-orange">
+                                    <i class="icon-simple-line-control-play text-white"></i>
+                                    <span class="video-icon-sonar">
+                                        <span class="video-icon-sonar-bfr bg-gradient-light-purple-light-orange opacity-7"></span>
+                                        <span class="video-icon-sonar-afr bg-gradient-light-purple-light-orange"></span>
+                                    </span>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-12 col-lg-5 col-md-6 offset-lg-1">
+                        <h5 class="alt-font font-weight-500 text-extra-dark-gray w-90">Livingedge is meant to simplify the workflow and ease project tracking</h5>
+                        <p class="w-85 lg-w-90">Unique and powerful software to run your entire business, brought to you by a company a the long term vision to transform the way you work.</p>
+                        <div class="btn-dual margin-15px-top d-inline-block">
+                            <a href="{% url 'registerUser' %}" class="btn btn-medium btn-dark-gray btn-slide-right-bg">Register<span class="bg-white"></span></a>
+                            <a href="{% url 'about' %}" class="btn btn-medium btn-transparent-dark-gray btn-slide-right-bg xs-no-margin">Read More<span class="bg-extra-dark-gray"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="bg-light-gray wow animate__fadeIn">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-3 row-cols-sm-2">
+                    <!-- start feature box item -->
+                    <div class="col wow animate__fadeIn" data-wow-delay="0.2s">
+                        <div class="feature-box feature-box-shadow padding-twenty-tb padding-twelve-lr xs-padding-fifteen-tb xs-padding-eight-lr">
+                            <div class="feature-box-icon">
+                                <i class="line-icon-Navigation-LeftWindow icon-medium text-gradient-light-purple-light-orange margin-40px-bottom md-margin-20px-bottom"></i>
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span class="text-extra-medium alt-font text-extra-dark-gray d-block margin-5px-bottom font-weight-500">Get key insights without cobbling them together</span>
+                                <p>See data in real time. Dashboards let you gauge progress across experts and projects—without manual effort, this will help you  share the same to customers, hence everyone is on the same page.</p>
+                            </div>
+                            <div class="feature-box-overlay bg-white border-radius-5px"></div>
+                        </div>
+                    </div>
+                    <!-- end feature box item -->
+                    <!-- start feature box item -->
+                    <div class="col wow animate__fadeIn" data-wow-delay="0.4s">
+                        <div class="feature-box feature-box-shadow padding-twenty-tb padding-twelve-lr xs-padding-fifteen-tb xs-padding-eight-lr">
+                            <div class="feature-box-icon">
+                                <i class="line-icon-Cursor-Click2 icon-medium text-gradient-light-purple-light-orange margin-40px-bottom md-margin-20px-bottom"></i>
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span class="text-extra-medium alt-font text-extra-dark-gray text-gradient-orange-pink-hover d-block margin-5px-bottom font-weight-500">Spot trouble before it costs you</span>
+                                <p>Visualize data to troubleshoot problems instantly. Zoom in on details. Then, click on any data point to drive to the underlined projects and tasks, and take action as needed.</p>
+                            </div>
+                            <div class="feature-box-overlay bg-white border-radius-5px"></div>
+                        </div>
+                    </div>
+                    <!-- end feature box item -->
+                    <!-- start feature box item -->
+                    <div class="col wow animate__fadeIn" data-wow-delay="0.6s">
+                        <div class="feature-box feature-box-shadow padding-twenty-tb padding-twelve-lr xs-padding-fifteen-tb xs-padding-eight-lr">
+                            <div class="feature-box-icon">
+                                <i class="line-icon-Like-2 icon-medium text-gradient-light-purple-light-orange margin-40px-bottom md-margin-20px-bottom"></i>
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span class="text-extra-medium alt-font text-extra-dark-gray d-block margin-5px-bottom font-weight-500">Pull in data from any project and team</span>
+                                <p>Give your team the flexibility to create projects on any stream of work. Start with appointments, or build projects. And get an accurate picture of what’s happening—all in one place.</p>
+                            </div>
+                            <div class="feature-box-overlay bg-white border-radius-5px"></div>
+                        </div>
+                    </div>
+                    <!-- end feature box item -->
+                    <!-- start feature box item -->
+                    <div class="col wow animate__fadeIn" data-wow-delay="0.2s">
+                        <div class="feature-box feature-box-shadow padding-twenty-tb padding-twelve-lr xs-padding-fifteen-tb xs-padding-eight-lr">
+                            <div class="feature-box-icon">
+                                <i class="line-icon-Talk-Man icon-medium text-gradient-light-purple-light-orange margin-40px-bottom md-margin-20px-bottom"></i>
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span class="text-extra-medium alt-font text-extra-dark-gray d-block margin-5px-bottom font-weight-500">Turn around time (TAT)</span>
+                                <p>Specify the date and time something is due so everyone’s working on the same deadline—no matter their time zone.</p>
+                            </div>
+                            <div class="feature-box-overlay bg-white border-radius-5px"></div>
+                        </div>
+                    </div>
+                    <!-- end feature box item -->
+                    <!-- start feature box item -->
+                    <div class="col wow animate__fadeIn" data-wow-delay="0.4s">
+                        <div class="feature-box feature-box-shadow padding-twenty-tb padding-twelve-lr xs-padding-fifteen-tb xs-padding-eight-lr">
+                            <div class="feature-box-icon">
+                                <i class="line-icon-Heart icon-medium text-gradient-light-purple-light-orange margin-40px-bottom md-margin-20px-bottom"></i>
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span class="text-extra-medium alt-font text-extra-dark-gray text-gradient-orange-pink-hover d-block margin-5px-bottom font-weight-500">Maintain project records online</span>
+                                <p>Add files from your computer, Dropbox, Box, or Google Drive to any project or conversation. You can see files on individual tasks, or at the project level.</p>
+                            </div>
+                            <div class="feature-box-overlay bg-white border-radius-5px"></div>
+                        </div>
+                    </div>
+                    <!-- end feature box item -->
+                    <!-- start feature box item -->
+                    <div class="col wow animate__fadeIn" data-wow-delay="0.6s">
+                        <div class="feature-box feature-box-shadow padding-twenty-tb padding-twelve-lr xs-padding-fifteen-tb xs-padding-eight-lr">
+                            <div class="feature-box-icon">
+                                <i class="line-icon-Gear-2 icon-medium text-gradient-light-purple-light-orange margin-40px-bottom md-margin-20px-bottom"></i>
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span class="text-extra-medium alt-font text-extra-dark-gray d-block margin-5px-bottom font-weight-500">Project Overview</span>
+                                <p>Give your customers clarity and context on work in one place. Share key resources, status updates, and more.</p>
+                            </div>
+                            <div class="feature-box-overlay bg-white border-radius-5px"></div>
+                        </div>
+                    </div>
+                    <!-- end feature box item -->
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="wow animate__fadeIn">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-5 sm-margin-30px-bottom">
+                        <h5 class="alt-font font-weight-500 text-extra-dark-gray mb-0">We build softwares and provide digital experience that engage the right customers and clients</h5>
+                    </div>
+                    <div class="col-12 col-lg-6 offset-lg-1 col-md-7">
+                        <div class="row row-cols-1 row-cols-sm-2">
+                            <!-- start counter item -->
+                            <div class="col counter-style-01 last-paragraph-no-margin xs-margin-30px-bottom">
+                                <h5 class="counter counter-number text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-1px margin-15px-bottom" data-to="100" data-speed="7000">100</h5>
+                                <span class="alt-font font-weight-500 text-extra-dark-gray d-block margin-5px-bottom">Leadership resources</span>
+                                <p class="w-85 md-w-100">Build your leadership skills and go from “You can do this” to “We can do this together.”</p>
+                            </div>
+                            <!-- end counter item -->
+                            <!-- start counter item -->
+                            <div class="col counter-style-01 last-paragraph-no-margin">
+                                <h5 class="counter counter-number text-extra-dark-gray alt-font appear font-weight-600 letter-spacing-minus-1px margin-15px-bottom" data-to="150" data-speed="7000">150</h5>
+                                <span class="alt-font font-weight-500 text-extra-dark-gray d-block margin-5px-bottom">Collaboration resources</span>
+                                <p class="w-85 md-w-100">Resources to unlock collaboration and empower customers to work together effortlessly.</p>
+                            </div>
+                            <!-- end counter item -->
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="w-100 h-1px bg-medium-gray margin-7-rem-top margin-8-rem-bottom sm-margin-5-rem-tb"></div>
+                    </div>
+                </div>
+              
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="bg-light-gray wow animate__fadeIn">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-xl-4 offset-xl-2 col-lg-6 order-lg-2 md-margin-50px-bottom sm-margin-30px-bottom wow animate__fadeInRight" data-wow-delay="0.4s" data-wow-duration="0.6s">
+                        <div class="outside-box-right">
+                            <img src="{% static 'webapp/images/what-we-offers-04.jpg' %}" class="box-shadow-medium border-radius-5px overflow-hidden" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-5 col-lg-6 order-lg-1 padding-five-right sm-padding-15px-right wow animate__fadeIn" data-wow-delay="0.2s">
+                        <h5 class="alt-font cd-headline slide font-weight-500 text-extra-dark-gray line-height-40px margin-40px-bottom">
+                            <span class="d-initial p-0">We Build Work Management Resources </span>
+                            <span class="cd-words-wrapper d-initial p-0">
+                                <b class="text-gradient-light-purple-light-orange border-width-2px border-bottom border-gradient-light-purple-light-orange letter-spacing-minus-1px is-visible">Project Management Resources</b>
+                                <b class="text-gradient-light-purple-light-orange border-width-2px border-bottom border-gradient-light-purple-light-orange letter-spacing-minus-1px">Project Planning Resources</b>
+                                <b class="text-gradient-light-purple-light-orange border-width-2px border-bottom border-gradient-light-purple-light-orange letter-spacing-minus-1px">Goals Resources</b>
+                            </span>
+                        </h5>
+                        <p>Discover what work management is and what it looks like in practice with resources from Livingedge.</p>
+                        <ul class="list-style-01 text-extra-dark-gray">
+                            <li><i class="fas fa-check text-extra-medium-gray"></i>Bring your team’s work together in one shared space.<span class="list-hover bg-white box-shadow-small border-radius-4px"></span></li>
+                            <li><i class="fas fa-check text-extra-medium-gray"></i>Build your leadership skills and go from “You can do this” to “We can do this together.”<span class="list-hover bg-white box-shadow-small border-radius-4px"></span></li>
+                            <li><i class="fas fa-check text-extra-medium-gray"></i>Resources to unlock collaboration and empower customers to work together effortlessly.<span class="list-hover bg-white box-shadow-small border-radius-4px"></span></li>
+                             <li><i class="fas fa-check text-extra-medium-gray"></i>Resources to help you set and achieve strategic goals.<span class="list-hover bg-white box-shadow-small border-radius-4px"></span></li>
+                            <li><i class="fas fa-check text-extra-medium-gray"></i>Move projects from start to finish with project planning.<span class="list-hover bg-white box-shadow-small border-radius-4px"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+  
+        <!-- end section -->
+        <!-- start section -->
+        <section class="parallax one-half-screen md-h-450px sm-h-350px" data-parallax-background-ratio="0.5" style="background: url({% static 'webapp/images/what-we-offers-bg-1.jpg' %});">
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="position-relative overflow-visible pb-0 pt-md-0 wow animate__fadeIn">
+            <div class="container">
+                <div class="overlap-section">
+                    <div class="z-index-6 bg-white box-shadow-small border-radius-5px padding-60px-tb md-padding-40px-all xs-padding-20px-lr">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-12 col-lg-4 offset-lg-1 col-md-6 text-center text-md-start sm-margin-20px-bottom">
+                                <h6 class="alt-font font-weight-500 text-extra-dark-gray w-85 mb-0 lg-w-100">Livingedge is meant to simplify the productivity</h6>
+                            </div>
+                            <div class="col-12 col-xl-3 offset-xl-3 col-lg-4 offset-lg-2 col-md-6 text-center text-md-end">
+                                <a href="https://www.youtube.com/watch?v=g0f_BRYJLJE" class="popup-youtube video-icon-box video-icon-medium text-extra-dark-gray text-fast-blue-hover">
+                                    <span>
+                                        <span class="video-icon bg-gradient-light-purple-light-orange margin-20px-right">
+                                            <i class="icon-simple-line-control-play text-white"></i>
+                                            <span class="video-icon-sonar">
+                                                <span class="video-icon-sonar-afr bg-gradient-light-purple-light-orange"></span>
+                                            </span>
+                                        </span>
+                                        <span class="video-icon-text alt-font text-extra-medium font-weight-500 text-decoration-line-bottom">Discover collection</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </section>
+        <!-- end section -->
+
+       
+
+{% endblock body %}

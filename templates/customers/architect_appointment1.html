@@ -1,0 +1,69 @@
+{% extends 'ibase1.html' %}
+
+{% load static %}
+
+{% block body %}
+
+
+
+
+
+{% include 'includes/alerts.html' %}
+
+
+<br>
+<br>
+
+
+<!-- #page-title end -->
+<!-- #wrapper-content start -->
+<div id="wrapper-content" class="wrapper-content pt-10 pb-13">
+    <div class="container">
+
+        <div id="page-title" class="page-title pt-11 text-center">
+				<div class="h-100 ">
+					<div class="heading">
+						<h1 class="mb-0" data-animate="fadeInDown">
+							Appointment Confirmation
+						</h1>
+						<ul class="breadcrumb justify-content-center"
+						    data-animate="fadeInUp">
+							<li class="breadcrumb-item"><a href="/">Home</a></li>
+							<li class="breadcrumb-item"><span>Appointment confirmation</span></li>
+						</ul>
+					</div>
+				</div>
+		</div>
+       
+        <!-- #pricing-table START -->
+        <div id="pricing-table" class="section-pricing-table pt-9">
+            <form action="" method="post">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label>Company / Architect Name</label>
+                    <input type="text" class="form-control" id="{{architect}}" aria-describedby="emailHelp" placeholder="{{architect}} " readonly>
+                  </div>
+                <div class="form-group">
+                  <label>Architect email address</label>
+                  <input type="email" class="form-control" id="{{architect.user.email}}" aria-describedby="emailHelp" placeholder="{{architect.user.email}}" readonly>
+                </div>
+                
+                <div class="form-group">
+                    <label>Select date to book an appointment with the architect</label>
+                    <input class="form-control" type="date" name="a_date">
+                </div>
+
+                <div class="form-group">
+                    <label>Select time to book an appointment with the architect</label>
+                    <input class="form-control" type="time" name="a_timing">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+        <!-- #pricing-tableEND -->
+
+    </div>
+</div>
+
+{% endblock body %}

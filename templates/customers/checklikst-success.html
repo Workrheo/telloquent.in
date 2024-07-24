@@ -1,0 +1,66 @@
+
+ 
+{% extends 'ibase1.html' %}
+
+{% load static %}
+
+
+{% include 'includes/alerts.html' %}
+
+
+
+
+
+
+
+{% block body %}
+
+        
+<br>
+<br>
+
+<br>
+
+<br>
+<br>
+
+<br>
+<br>
+
+
+        <section class="bg-light-gray overflow-visible pt-md-0">
+            <div class="container">
+                <div class="z-index-6 position-relative overlap-section-three-fourth bg-white box-shadow-large padding-8-rem-all md-padding-5-rem-all xs-padding-4-rem-tb xs-padding-2-rem-lr wow animate__fadeIn" data-wow-delay="0.4s">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-xl-6 col-lg-7 text-center margin-4-half-rem-bottom md-margin-3-rem-bottom">
+                            <h4 class="alt-font font-weight-600 text-extra-dark-gray">Checklist Shared to the designer succesfully </h4>
+
+                        </div>
+                        <div class="col-12">
+                            
+
+
+                          <div class="row justify-content-center wow animate__fadeIn">
+                            <div class="col-12 col-lg-10 d-flex flex-row align-items-center justify-content-center text-center margin-7-half-rem-top">
+                                <span class="col-auto w-40px h-1px bg-dark-gray opacity-3"></span>
+                                <div class="alt-font font-weight-500 text-large text-extra-dark-gray padding-20px-lr">Thank you for the Checklist, You will recieve the confirmation email for this email {{request.user.email}}  </div>
+                                <span class="col-auto w-40px h-1px bg-dark-gray opacity-3"></span>
+                            </div>
+                            </div>
+                        </div>
+                          
+                            <!-- end contact form -->
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        
+        <!-- end section -->
+        <!-- start footer -->
+
+
+{% endblock body %}

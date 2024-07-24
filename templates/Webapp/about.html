@@ -1,0 +1,246 @@
+{% extends 'ibase.html' %}
+
+{% load static %}
+
+
+
+{% block body %}
+      
+
+<div id="wrapper-content" class="wrapper-content pt-0 pb-0">
+    <div class="banner">
+        <div class="container">
+            <div class="banner-content text-center">
+                <div class="heading" data-animate="fadeInDown">
+                    <h1 class="mb-0 text-white">
+                        We’re Building The Destination For Getting Things Done
+                    </h1>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="about-intro text-center pt-12 pb-11">
+        <div class="container">
+            <div class="jumbotron mb-9 bg-transparent p-0 text-dark">
+                <h3 class="mb-7">
+                    Solving One Big Problem
+                </h3>
+                <p class="lead mb-0 font-size-lg font-weight-normal lh-18">In 2019 Telloquent noticed a
+                    problem.
+                    Customers needed help connecting to qualified, local professionals. The same professionals
+                    needed customers. As a solution to bring the two together, Telloquent  was born. Since then,
+                    we’ve
+                    helped hundreds of customers with their projects and generated more than $1 million in
+                    annual
+                    revenue for our pros. We’re reshaping local economies. We’re changing lives. And true to the
+                    spirit of our customers and pros, we’re getting things done.</p>
+            </div>
+            <div class="row counters justify-content-center">
+                
+                <div class="col-md-6 col-lg-4 mb-8">
+                    <div class="counter">
+                        <div>
+                            <span class="text-primary font-size-h1 lh-12">+</span>
+                            <span class="counterup text-primary font-size-h1 lh-12" data-start="0"
+                                  data-end="5" data-decimals="0"
+                                  data-duration="0" data-separator=",">5</span>
+                        </div>
+                        <span class="text-uppercase text-dark font-weight-semibold">cities</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-8">
+                    <div class="counter">
+                        <div>
+                            <span class="text-primary font-size-h1 lh-12">+</span>
+                            <span class="counterup text-primary font-size-h1 lh-12" data-start="0"
+                                   data-end="50" data-decimals="0"
+                                   data-duration="0" data-separator=",">50</span></div>
+
+                        <span class="text-uppercase text-dark font-weight-semibold">business</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-8 mb-lg-0">
+                    <div class="counter">
+                        <div>
+                            <span class="text-primary font-size-h1 lh-12">+</span>
+                            <span class="counterup text-primary font-size-h1 lh-12" data-start="0"
+                                   data-end="100" data-decimals="0"
+                                   data-duration="0" data-separator=",">100</span></div>
+                        <span class="text-uppercase text-dark font-weight-semibold">Register Users</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-8 mb-lg-0">
+                    <div class="counter">
+                        <div>
+                            <span class="text-primary font-size-h1 lh-12">+</span>
+
+                            <span class="counterup text-primary font-size-h1 lh-12" data-start="0"
+                                  data-end="100" data-decimals="0"
+                                  data-duration="0" data-separator=",">100</span>
+                        </div>
+                        <span class="text-uppercase text-dark font-weight-semibold">visiters daily</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="counter">
+                        <div>
+                            <span class="text-primary font-size-h1 lh-12">+</span>
+                            <span class="counterup text-primary font-size-h1 lh-12" data-start="0"
+                                   data-end="35" data-decimals="0"
+                                   data-duration="0" data-separator=",">35</span></div>
+                        <span class="text-uppercase text-dark font-weight-semibold">REviews</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pt-11 bg-gray-02 pb-9">
+        <div class="container">
+            <h3 class="mb-8 text-center text-capitalize">
+                clients say about Telloquent ?
+            </h3>
+            <div class="testimonial-navs">
+                <div class="slick-slider slider-for"
+                     data-slick-options='{"slidesToShow": 1, "autoplay":false,"arrows":false,"dots":false,"infinite": true,"asNavFor": ".slider-nav"}'>
+                     {% for client in testimonials %}
+                    <div class="box">
+                        <div class="card testimonial h-100 border-0">
+                            <ul class="list-inline d-flex mb-3 flex-wrap card-title align-items-center">
+                                <li class="list-inline-item">
+                                    <span class="text-dark h5 mb-0 d-inline-block">Execellent</span>
+                                </li>
+                                <li class="list-inline-item">
+                                    <span class="text-dark font-weight-semibold">-</span>
+                                </li>
+                                <li class="list-inline-item mr-3">
+                                    <div class="author-rate">
+                                        <span class="rate-item checked">
+                                                <svg class="icon icon-ionicons_svg_md-star"><use
+                                                        xlink:href="#icon-ionicons_svg_md-star"></use></svg>
+                                            </span>
+                                        <span class="rate-item checked">
+                                                <svg class="icon icon-ionicons_svg_md-star"><use
+                                                        xlink:href="#icon-ionicons_svg_md-star"></use></svg>
+                                            </span>
+                                        <span class="rate-item checked">
+                                                <svg class="icon icon-ionicons_svg_md-star"><use
+                                                        xlink:href="#icon-ionicons_svg_md-star"></use></svg>
+                                            </span>
+                                        <span class="rate-item checked">
+                                                <svg class="icon icon-ionicons_svg_md-star"><use
+                                                        xlink:href="#icon-ionicons_svg_md-star"></use></svg>
+                                            </span>
+                                        <span class="rate-item checked">
+                                                <svg class="icon icon-ionicons_svg_md-star"><use
+                                                        xlink:href="#icon-ionicons_svg_md-star"></use></svg>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="list-inline-item d-inline-flex align-items-end flex-wrap view-more">
+                                    <ul class="list-inline">
+                                       
+                                        <li class="list-inline-item mr-0">
+                                            <a href="#" class="text-dark">{{client.customer_name}}
+                                                hired  </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <span>{{client.client_name}}</span>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="card-body px-0 font-size-lg text-dark pb-0">
+                                "{{client.client_testimony}}"
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                   
+                </div>
+                <div class="slick-slider slider-nav"
+                     data-slick-options='{"slidesToShow": 3, "autoplay":false,"centerMode":true,"centerPadding":"0","infinite":true,"arrows":false,"dots":false,"asNavFor": ".slider-for","focusOnSelect": true,"responsive":[{"breakpoint": 992,"settings": {"slidesToShow": 2}},{"breakpoint": 768,"settings": {"slidesToShow": 1}}]}'>
+                     {% for client in testimonials %}
+                     
+                    <div class="box">
+                        <div class="media align-items-center">
+                            <a href="#" class="author-image mr-3"><img
+                                    src="{{client.client_photo.url}}"
+                                    alt="Job testimonial 1" class="rounded-circle"></a>
+                            <div class="media-body lh-14">
+                                <div class="font-size-lg text-dark font-weight-semibold text-uppercase name">
+                                    {{client.customer_name}}
+                                </div>
+                                <ul class="list-inline font-size-sm mb-0">
+                                    <li class="list-inline-item mr-0">
+                                        <span class="text-secondary d-inline-block text-nowrap">Customer for </span>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <span class="text-link">Telloquent  </span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="bg-gray-02 pb-13 trust-by">
+        <div class="container">
+            <div class="border-top pt-11 mb-9">
+                <h4 class="mb-0 font-weight-bold text-uppercase">
+                    Trusted by
+                </h4>
+            </div>
+            <div class="slick-slider client-logo"
+                 data-slick-options='{"slidesToShow": 5,"autoplay":true,"dots":false,"arrows":false,"responsive":[{"breakpoint": 992,"settings": {"slidesToShow": 4}},{"breakpoint": 770,"settings": {"slidesToShow": 3}},{"breakpoint": 576,"settings": {"slidesToShow": 2}}]}'>
+                 {% for image in client_list %}
+                 <div class="box">
+                    <a href="#" class="item">
+                        <img src="{{ image.client_photo.url }}" alt="Client logo">
+                    </a>
+
+                </div>
+                {% endfor %}
+                
+              
+               
+               
+               
+               
+            </div>
+        </div>
+    </div>
+    <section class="bg-primary py-7">
+        <div class="container">
+            <div class="row align-items-center ">
+                <div class="text-white col-lg-9">
+                    <h2 class="mb-1 text-white">
+                        Are you a local service professional?
+                    </h2>
+                    <p class="mb-0 font-size-md">
+                        Learn how Thedir can help you double your business
+                    </p>
+                </div>
+
+                <div class="col-lg-3 mt-4 mt-lg-0 text-left text-lg-right">
+                    <a href="{% url 'join_as_pro' %}"
+                       class="btn btn-white btn-lg btn-icon-right font-size-h5 px-6 py-3 lh-1 text-primary rounded-sm">
+                        Learn More
+                        <i class="fal fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+{% endblock body %}
+

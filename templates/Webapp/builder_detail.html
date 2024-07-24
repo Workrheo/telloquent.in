@@ -1,0 +1,305 @@
+
+{% extends 'ibase1.html' %}
+
+{% load static %}
+
+
+
+{% block body %}
+
+<div id="wrapper-content" class="wrapper-content pb-0 pt-0 ">
+    <div class="page-wrapper bg-white">
+        <div class="image-gallery">
+            <div class="slick-slider"
+                 data-slick-options='{"slidesToShow": 1, "autoplay":true,"responsive":[{"breakpoint": 1200,"settings": {"dots": false,"arrows":false}}]}'>
+                 {% for image in project_images %}
+                <div class="box"><img src="{{image.image.url}}" alt="builder images" style="width: 1500px; height: 750px;"></div>
+                {% endfor %}
+                <!--div class="box"><img src="{% static 'webapp/images/blog/image-3.jpg' %}" alt="Image 1"></div>
+                <div class="box"><img src="{% static 'webapp/images/blog/image-3.jpg' %}" alt="Image 1"></div-->
+            </div>
+        </div>
+        <div class="container">
+            <div class="page-title pt-7 pb-8 border-bottom mb-8">
+                <ul class="breadcrumb breadcrumb-style-03 mb-5">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'builder_list' %}">Interior builders </a></li>
+                    <li class="breadcrumb-item"> {{builder}}</li>
+                </ul>
+                <div class="explore-details-top d-flex flex-wrap flex-lg-nowrap bg-white pb-2">
+                    <div class="store">
+                        <div class="d-flex flex-wrap">
+                            <h2 class="mr-2 mb-2">{{builder}}
+                            </h2>
+                           
+                        </div>
+                        <ul class="list-inline d-flex flex-wrap store-meta">
+                            
+                            <li class="list-inline-item separate"></li>
+                            <li class="list-inline-item">
+                                <span><i class="fal fa-clock"></i></span>
+                                <span class="d-inline-block ml-2"> Porttfolio Created On {{builder.created_at}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="page-container row bg-white pt-2 pb-8">
+                <div class="page-content col-xl-8 mb-9 mb-xl-0">
+                    <div class="explore-details-container">
+                       
+                        <div class="mb-7">
+                            <h3 class="font-size-lg text-dark text-uppercase text-dark mb-6 lh-12 font-weight-semibold">
+                                About {{builder}}
+                            </h3>
+                            <div class="content-listing">
+                                <ul class="list-group list-group-flush list-group-borderless">
+                                    <li class="list-group-item p-0 bg-transparent mb-3">
+                                        <div class="ml-5">
+                                            {{builder.builder_description}}
+                                        </div>
+                                    </li>
+                                   
+                                   
+                                    
+                                </ul>
+
+                            </div>
+                            
+                        </div>
+
+                        <div class="pt-3">
+                            <a href="{% url 'builder_appointment' builder.id %}"
+                               class="btn btn-primary btn-block font-size-h5 text-uppercase btn-lg rounded-sm">Click here to book Appointment to meet the builder</a>
+                        </div>
+
+
+                      
+
+                        <div class="block-more-listing mt-9 pt-8 border-top">
+                            <h4 class="font-size-md mb-7 pt-2">Projects showcase 
+                               by 
+                                <span class="text-danger">{{builder}}</span>
+                            </h4>
+
+                            <div class="block-review">
+
+                                {% for category in categories %}
+                               
+                                <div class="reviews">
+                                    <div class="py-6 media border-top">
+                                        {% if category.project_image.url  %}
+                                        <a href="#" class="author-image">
+                                            <img src="{% static 'images/1.jpg' %}"
+                                                 alt="Author 1" class="rounded-circle">
+                                        </a>
+                                        {% else %}
+                                        <a href="#" class="author-image">
+                                            <img src="{{category.project_image.url}}"
+                                                 alt="Author 1" class="rounded-circle">
+                                        </a>
+                                        {% endif %}
+                                        <div class="media-body">
+                                            <div class="mb-4 row flex-md-nowrap mb-5">
+                                                <div class="col-12 col-md-10">
+                                                    <div class="h5 mb-1">{{ category }}
+                                                    </div>
+                                                    <ul class="list-inline text-gray">
+                                                        <li class="list-inline-item">
+                                                            <span>in </span>
+                                                            <a href="#">{{category.property_name}}</a>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <span>|</span>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <span>Project Handover Date : {{category.project_created_at}}</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="ml-0 ml-md-auto text-left text-md-right col-12 col-md-2 mt-2 mt-md-0">
+                                                    <span class="badge badge-success d-inline-block font-size-h5 font-weight-semibold">{{ category.project_budget}} lacs</span>
+                                                    <span class="text-dark font-weight-semibold font-size-md d-block">Budget</span>
+                                                </div>
+                                            </div>
+
+                                            <p class="mb-0">{{category.description}}
+                                            </p>
+                                            <br>
+                                            <div class="card p-4 widget border-0 gallery bg-gray-06 rounded-0 mb-6">
+                                                <div class="card-title d-flex mb-0 font-size-md font-weight-semibold text-dark text-uppercase border-bottom pb-2 lh-1">
+                                                    <span class="text-secondary mr-3">
+                                                        <svg class="icon icon-ionicons_svg_md-images">
+                                                            <use xlink:href="#icon-ionicons_svg_md-images"></use>
+                                                        </svg>
+                                                    </span>
+                                                    <span>  Project Designs</span>
+                                                </div>
+                                                <div class="card-body px-0 pt-6 pb-3">
+                                                    <div class="photo-gallery d-flex flex-wrap justify-content-between">
+                                                        {% for project in category.portfolioitems.all %}
+                                                        <a href="{{project.image.url}}" class="photo-item"
+                                                           data-gtf-mfp="true" data-gallery-id="01">
+                                                            <img src="{{project.image.url}}" alt="{{category}}">
+                                                        </a>
+
+                                                     
+
+                                                        {% endfor %}
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                  
+                                </div>
+                                {% endfor %}
+                            </div>
+                    
+                        </div>
+                        
+                       
+                    </div>
+                </div>
+                <div class="sidebar col-xl-4">
+                    <div class="card p-0 infomation bg-gray mb-6 border-0">
+                        <img src="{{builder.user_profile.profile_picture.url}}" alt="Sidebar image" class="card-img-top">
+
+                        <div class="card-body border-0 infomation pt-0 px-4 bg-gray-06">
+                            <div class="card-header bg-transparent border-0 pt-4 pb-2 px-0">
+                                <h5 class="card-title font-weight-semibold text-capitalize mb-3">{{builder.builder_name}}</h5>
+                                <hr class="m-0">
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-transparent d-flex text-dark px-0 py-2 lh-12">
+                                    <span class="item-icon mr-3"><i class="fal fa-map-marker-alt"></i></span>
+                                    <span class="card-text">{{ builder.user_profile.address }} {{builder.user_profile.city}} {{builder.user_profile.pin_code}}</span>
+                                </li>
+                                <li class="list-group-item bg-transparent d-flex text-dark px-0 py-2 lh-12">
+                                    <span class="item-icon mr-3">
+                                        <svg class="icon icon-telephone">
+                                            <use xlink:href="#icon-telephone"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="card-text">+91 {{builder.offical_number}}</span>
+                                </li>
+                                <li class="list-group-item bg-transparent d-flex text-dark px-0 py-2 lh-12">
+                                    <span class="item-icon mr-3"><i class="fal fa-globe"></i></span>
+                                    <span class="card-text"><a href="https://{{builder.website}}">{{builder.website}}</a></span>
+                                </li>
+                                <li class="list-group-item bg-transparent d-flex text-dark px-0 py-2 lh-12">
+                                    <div class="social-icon origin-color si-square text-center pt-3">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item si-facebook">
+                                                <a target="_blank" title="Facebook" href="{{builder.facebook_link}}">
+                                                    <i class="fab fa-facebook-f">
+                                                    </i>
+                                                    <span>Facebook</span>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item si-instagram">
+                                                <a target="_blank" title="Instagram" href="{{builder.instagram_link}}">
+                                                    <i class="fab fa-instagram">
+                                                    </i>
+                                                    <span>Instagram</span>
+                                                </a>
+                                            </li>
+
+
+                                            <li class="list-inline-item si-youtube">
+                                                <a target="_blank" title="Youtube" href="{{builder.youtube_link}}">
+                                                    <i class="fab fa-youtube">
+                                                    </i>
+                                                    <span>Youtube</span>
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                   
+                    <div class="card p-4 widget border-0 schedule bg-gray-06 mb-6 rounded-0">
+                        <div class="card-title d-flex mb-0 font-size-md font-weight-semibold text-dark text-uppercase border-bottom pb-2 lh-1">
+                            <span class="text-secondary mr-3"><i class="fal fa-clock"></i></span>
+                            <span>business Hours</span>
+                        </div>
+
+                       
+                        <div class="card-body px-0 pb-0">
+                            
+                            <ul class="list-group list-group-flush">
+                                {% for hour in opening_hours %}
+                                <li class="list-group-item bg-transparent d-flex text-dark px-0 border-top-0">
+                                    <label class="text-dark font-weight-semibold mb-0">{{ hour }}</label>
+                                    <span class="text-dark ml-auto">{% if hour.is_closed %}Closed{% else %}{{ hour.from_hour }} - {{ hour.to_hour }}{% endif %}</span>
+                                </li>
+                                {% endfor %}
+                               
+
+                            </ul>
+                        </div>
+                        
+                    </div>
+
+                    <div class="card p-4 widget border-0 gallery bg-gray-06 rounded-0 mb-6">
+                        <div class="card-title d-flex mb-0 font-size-md font-weight-semibold text-dark text-uppercase border-bottom pb-2 lh-1">
+                            <span class="text-secondary mr-3">
+                                <svg class="icon icon-ionicons_svg_md-images">
+                                    <use xlink:href="#icon-ionicons_svg_md-images"></use>
+                                </svg>
+                            </span>
+                            <span> Office/Factory Images</span>
+                        </div>
+                        <div class="card-body px-0 pt-6 pb-3">
+                            <div class="photo-gallery d-flex flex-wrap justify-content-between">
+                                {% for image in builder_office_images %}
+                                <a href="{{ image.image.url}}" class="photo-item"
+                                   data-gtf-mfp="true" data-gallery-id="01">
+                                    <img src="{{ image.image.url}}" alt="Gallery 01">
+                                </a>
+                                {% endfor %}
+                               
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card p-4 widget border-0 gallery bg-gray-06 rounded-0 mb-6">
+                        <div class="card-title d-flex mb-0 font-size-md font-weight-semibold text-dark text-uppercase border-bottom pb-2 lh-1">
+                            <span class="text-secondary mr-3">
+                                <svg class="icon icon-ionicons_svg_md-images">
+                                    <use xlink:href="#icon-ionicons_svg_md-images"></use>
+                                </svg>
+                            </span>
+                            <span> Our Best Design Collection</span>
+                        </div>
+                        <div class="card-body px-0 pt-6 pb-3">
+
+                            <div class="photo-gallery d-flex flex-wrap justify-content-between">
+                                {% for image in project_images %}
+                                <a href="{{ image.image.url}}" class="photo-item"
+                                   data-gtf-mfp="true" data-gallery-id="01">
+                                    <img src="{{ image.image.url}}" alt="Gallery 01">
+                                </a>
+                                {% endfor %}
+                                
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+
+{% endblock body %}
